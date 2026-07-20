@@ -1,5 +1,22 @@
 const LANG_KEY = 'cydit-lang-v2';
 
+const store = {
+  get(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch (_) {
+      return null;
+    }
+  },
+  set(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch (_) {
+      /* storage unavailable (sandboxed preview) — ignore */
+    }
+  },
+};
+
 const ICON_CHECK =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>';
 const ICON_CROSS =
@@ -297,7 +314,7 @@ const content = {
   },
 };
 
-let lang = localStorage.getItem(LANG_KEY) === 'en' ? 'en' : 'ru';
+let lang = store.get(LANG_KEY) === 'en' ? 'en' : 'ru';
 
 function esc(value) {
   return String(value ?? '')
@@ -549,7 +566,7 @@ function renderLinks(c) {
 /* Language toggle */
 document.querySelector('[data-lang-toggle]').addEventListener('click', () => {
   lang = lang === 'ru' ? 'en' : 'ru';
-  localStorage.setItem(LANG_KEY, lang);
+  store.set(LANG_KEY, lang);
   render();
 });
 
