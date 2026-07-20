@@ -1,77 +1,77 @@
-const STORAGE_KEY = 'cydit-site-complete-content-v2';
-const AUTH_KEY = 'cydit-site-complete-auth-v1';
-const LANG_KEY = 'cydit-site-complete-lang-v1';
-const EDIT_LANG_KEY = 'cydit-site-complete-edit-lang-v1';
+const LANG_KEY = 'cydit-lang-v2';
 
 const ICON_CHECK =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>';
 const ICON_CROSS =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
 
-const defaultContent = {
+const svg = (paths) =>
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${paths}</svg>`;
+
+const FEATURE_ICONS = [
+  svg('<ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.6 3.1 3 7 3s7-1.4 7-3V6M5 12v6c0 1.6 3.1 3 7 3s7-1.4 7-3v-6"/>'),
+  svg('<circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="8" r="2.4"/><circle cx="9" cy="18" r="2.4"/><path d="M8.1 6.7l7.6 1M9 15.7L9 8.4M10.9 16.8l5.4-6.9"/>'),
+  svg('<path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13z"/>'),
+  svg('<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8.5 21h7"/>'),
+  svg('<path d="M12 3.5l1.7 4.6L18 10l-4.3 1.9L12 16.5l-1.7-4.6L6 10l4.3-1.9z"/><path d="M18.5 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/>'),
+  svg('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"/>'),
+];
+
+const content = {
   links: {
     email: 'hello@cydit.app',
     telegram: 'https://t.me/cydit',
   },
   images: {
-    brandLogo: 'assets/brand/cydit-mark.svg',
     heroMainImage: 'assets/screens/home.png',
     heroSideImage: 'assets/screens/capture.png',
-  },
-  sections: {
-    hero: true,
-    metrics: true,
-    product: true,
-    flow: true,
-    screens: true,
-    compare: true,
-    roadmap: true,
-    launch: true,
-    footer: true,
   },
   ru: {
     brandName: 'Cydit',
     nav: [
       { label: 'Продукт', href: '#product' },
-      { label: 'Маршрут AI', href: '#flow' },
+      { label: 'Как это работает', href: '#how' },
       { label: 'Сравнение', href: '#compare' },
-      { label: 'Экраны', href: '#screens' },
       { label: 'Роадмап', href: '#roadmap' },
-      { label: 'Запуск', href: '#launch' },
+      { label: 'FAQ', href: '#faq' },
     ],
-    loginButton: 'Войти',
-    openApp: 'Открыть Cydit',
-    heroEyebrow: 'AI память для живых мыслей',
-    heroTitle: 'Cydit собирает мысли в понятную систему',
+    signIn: 'Войти',
+    ctaPrimary: 'Ранний доступ',
+    heroBadge: 'AI-операционная система для мышления',
+    heroTitle: 'Преврати разрозненные мысли в систему, которая думает вместе с тобой',
     heroText:
-      'Говорите или пишите как есть. Cydit выделяет смысл, цель, план, следующий шаг и сохраняет это как память, к которой можно вернуться.',
-    heroPrimary: 'Начать',
-    heroSecondary: 'Смотреть экраны',
-    signals: ['Голос', 'Память', 'План', 'Инсайт'],
+      'Говори или пиши как есть. Cydit ловит каждую мысль и превращает её в смысл, память, планы и следующий шаг — чтобы ничего не терялось, а всё двигалось вперёд.',
+    heroPrimary: 'Получить ранний доступ',
+    heroSecondary: 'Как это работает',
+    signals: ['Голос', 'Долгая память', 'Граф знаний', 'До действия'],
     metrics: [
-      { value: 'JSON', label: 'единый AI контракт' },
-      { value: 'Voice first', label: 'голос как главный ввод' },
-      { value: 'Memory', label: 'связи между мыслями' },
-      { value: 'Fallback', label: 'работает даже при сбое AI' },
+      { value: 'Голос', label: 'фиксируй со скоростью мысли' },
+      { value: 'Живая память', label: 'идеи связываются со временем' },
+      { value: 'Авто-порядок', label: 'без папок и ручной сортировки' },
+      { value: 'До действия', label: 'каждая мысль становится шагом' },
     ],
     productEyebrow: 'Суть продукта',
     productTitle: 'Не чат. Система мышления.',
+    productSub: 'Cydit построен вокруг одной идеи — твои мысли заслуживают большего, чем текстовое поле.',
     features: [
-      { number: '01', title: 'Разбор мысли', text: 'AI выделяет категорию, эмоцию, намерение, цель и следующий шаг.' },
-      { number: '02', title: 'Память', text: 'Мысли соединяются с повторяющимися темами и активными контекстами.' },
-      { number: '03', title: 'Действие', text: 'Идеи превращаются в задачи, цели и короткий план без лишнего шума.' },
+      { title: 'Понимает каждую мысль', text: 'AI выделяет категорию, эмоцию, намерение, цель и следующий шаг из всего, что ты фиксируешь.' },
+      { title: 'Память, которая связывает', text: 'Каждая мысль соединяется с повторяющимися темами и контекстами, формируя живой граф знаний.' },
+      { title: 'Превращает идеи в действие', text: 'Заметки становятся задачами, целями и короткими планами — автоматически, без рутины.' },
+      { title: 'Голосовой захват', text: 'Просто говори. Cydit расшифрует, структурирует и запомнит — чтобы ты оставался в потоке.' },
+      { title: 'Умные подсказки', text: 'Cydit достаёт нужную память в нужный момент и подсказывает, что делать дальше.' },
+      { title: 'Работает везде', text: 'Сегодня — iOS и веб, завтра — AI-платформа. Твой разум синхронизирован со всем.' },
     ],
-    flowEyebrow: 'Маршрут AI',
+    flowEyebrow: 'Как это работает',
     flowTitle: 'От сырой мысли до следующего шага',
     flow: [
-      { number: '1', label: 'Мысль' },
-      { number: '2', label: 'Запись' },
-      { number: '3', label: 'AI анализ' },
-      { number: '4', label: 'План' },
-      { number: '5', label: 'Память' },
+      { number: '1', label: 'Захват', text: 'Голос или текст' },
+      { number: '2', label: 'Понимание', text: 'AI разбирает смысл' },
+      { number: '3', label: 'Связи', text: 'Соединяет с памятью' },
+      { number: '4', label: 'План', text: 'Становится действием' },
+      { number: '5', label: 'Возврат', text: 'Всегда найдётся' },
     ],
     screensEyebrow: 'Реальные экраны',
-    screensTitle: 'Интерфейс приложения уже говорит за себя',
+    screensTitle: 'Интерфейс говорит сам за себя',
     screens: [
       { image: 'assets/screens/home.png', title: 'Главная', alt: 'Главный экран Cydit' },
       { image: 'assets/screens/memory.png', title: 'Память', alt: 'Экран памяти Cydit' },
@@ -107,71 +107,69 @@ const defaultContent = {
       { quarter: 'Q1 2025', badge: '', title: 'Граф знаний', text: 'Полный визуальный граф знаний, связи между воспоминаниями, экспорт графа.' },
       { quarter: 'Q2 2025', badge: '', title: 'AI OS платформа', text: 'Полноценная AI-операционная система, интеграции, командные пространства.' },
     ],
-    launchEyebrow: 'Beta ready',
-    launchTitle: 'Cydit готов к первым пользователям',
-    launchText: 'Сайт можно показывать инвесторам, первым пользователям и команде. Контент управляется из скрытой админ-панели.',
-    launchCta: 'Войти в аккаунт',
-    footerText: 'AI память, которая превращает мысли в движение.',
-    telegramLabel: 'Telegram',
-    loginEyebrow: 'Вход',
-    loginTitle: 'Войти в Cydit',
-    loginField: 'Email / login',
-    passwordField: 'Пароль',
-    adminEyebrow: 'Admin',
-    adminTitle: 'Редактор сайта',
-    logout: 'Выйти',
-    save: 'Сохранить изменения',
-    reset: 'Сбросить',
-    saved: 'Сохранено',
-    resetDone: 'Контент сброшен',
-    exportDone: 'JSON скопирован в буфер обмена',
-    userLogged: 'Вход выполнен. Админ-панель доступна только владельцу.',
-    adminLogged: 'Админ-панель открыта.',
-    emptyLogin: 'Введите логин и пароль.',
+    faqEyebrow: 'FAQ',
+    faqTitle: 'Отвечаем на вопросы',
+    faq: [
+      { q: 'Что такое Cydit?', a: 'Cydit — это AI-слой памяти для твоего мышления. Ты фиксируешь мысли голосом или текстом, а он превращает их в структурированную память, планы и следующие шаги, к которым можно вернуться в любой момент.' },
+      { q: 'Чем он отличается от Notion или ChatGPT?', a: 'Notion хранит то, что ты напечатал; ChatGPT забывает тебя между чатами. Cydit помнит всё во времени, связывает это в граф знаний и сам подсказывает, что важно дальше.' },
+      { q: 'Нужно ли что-то организовывать вручную?', a: 'Нет. Cydit сам раскладывает каждую мысль — без папок, тегов и ручной сортировки. Ты просто фиксируешь, он структурирует.' },
+      { q: 'Какие платформы поддерживаются?', a: 'В публичной бете доступны iOS и веб; глубокая память, экспорт графа и командные пространства — уже в роадмапе.' },
+      { q: 'Когда можно начать?', a: 'Публичная бета уже доступна. Вступай в лист ожидания, чтобы получить ранний доступ и влиять на развитие Cydit.' },
+    ],
+    ctaEyebrow: 'Ранний доступ',
+    ctaTitle: 'Дай своему разуму второй мозг',
+    ctaText: 'Вступай в лист ожидания и стань одним из первых, кто превращает мысли в работающую систему.',
+    ctaPlaceholder: 'you@email.com',
+    ctaButton: 'В лист ожидания',
+    ctaSuccess: 'Ты в списке — скоро свяжемся. ✨',
+    footerText: 'AI-память, которая превращает мысли в движение.',
   },
   en: {
     brandName: 'Cydit',
     nav: [
       { label: 'Product', href: '#product' },
-      { label: 'AI route', href: '#flow' },
+      { label: 'How it works', href: '#how' },
       { label: 'Compare', href: '#compare' },
-      { label: 'Screens', href: '#screens' },
       { label: 'Roadmap', href: '#roadmap' },
-      { label: 'Launch', href: '#launch' },
+      { label: 'FAQ', href: '#faq' },
     ],
-    loginButton: 'Login',
-    openApp: 'Open Cydit',
-    heroEyebrow: 'AI memory for living thoughts',
-    heroTitle: 'Cydit gathers thoughts into a clear system',
+    signIn: 'Sign in',
+    ctaPrimary: 'Get Early Access',
+    heroBadge: 'The AI operating system for your mind',
+    heroTitle: 'Turn scattered thoughts into a system that thinks with you',
     heroText:
-      'Speak or type naturally. Cydit extracts meaning, goals, plans, and next steps, then keeps everything as memory you can return to.',
-    heroPrimary: 'Start',
-    heroSecondary: 'View screens',
-    signals: ['Voice', 'Memory', 'Plan', 'Insight'],
+      'Speak or type naturally. Cydit captures every thought and turns it into meaning, memory, plans, and the next step — so nothing gets lost and everything moves forward.',
+    heroPrimary: 'Get Early Access',
+    heroSecondary: 'See how it works',
+    signals: ['Voice-first', 'Long-term memory', 'Knowledge graph', 'Actionable'],
     metrics: [
-      { value: 'JSON', label: 'single AI contract' },
-      { value: 'Voice first', label: 'voice as primary input' },
-      { value: 'Memory', label: 'connections between thoughts' },
-      { value: 'Fallback', label: 'keeps working when AI fails' },
+      { value: 'Voice-first', label: 'capture at the speed of thought' },
+      { value: 'Living memory', label: 'ideas that connect over time' },
+      { value: 'Auto-organized', label: 'no folders, no manual sorting' },
+      { value: 'Next-step ready', label: 'every thought becomes action' },
     ],
     productEyebrow: 'Product core',
     productTitle: 'Not a chat. A thinking system.',
+    productSub: 'Your thoughts deserve more than a text box.',
     features: [
-      { number: '01', title: 'Thought parsing', text: 'AI extracts category, emotion, intent, goal, and next step.' },
-      { number: '02', title: 'Memory', text: 'Thoughts connect to recurring themes and active contexts.' },
-      { number: '03', title: 'Action', text: 'Ideas become tasks, goals, and short plans without noise.' },
+      { title: 'Understands every thought', text: 'AI extracts category, emotion, intent, goal, and the next step from anything you capture.' },
+      { title: 'Memory that connects', text: 'Each thought links to recurring themes and active contexts, building a living knowledge graph.' },
+      { title: 'Turns ideas into action', text: 'Notes become tasks, goals, and short plans — automatically, without the busywork.' },
+      { title: 'Voice-first capture', text: 'Just talk. Cydit transcribes, structures, and remembers so you can stay in flow.' },
+      { title: 'Smart suggestions', text: 'Cydit surfaces the right memory at the right moment and suggests what to do next.' },
+      { title: 'Works everywhere', text: 'iOS and web today, an AI OS platform tomorrow — your mind, synced across everything.' },
     ],
-    flowEyebrow: 'AI route',
+    flowEyebrow: 'How it works',
     flowTitle: 'From raw thought to next step',
     flow: [
-      { number: '1', label: 'Thought' },
-      { number: '2', label: 'Record' },
-      { number: '3', label: 'AI analysis' },
-      { number: '4', label: 'Plan' },
-      { number: '5', label: 'Memory' },
+      { number: '1', label: 'Capture', text: 'Speak or type' },
+      { number: '2', label: 'Understand', text: 'AI parses meaning' },
+      { number: '3', label: 'Connect', text: 'Links to memory' },
+      { number: '4', label: 'Plan', text: 'Becomes action' },
+      { number: '5', label: 'Recall', text: 'Always findable' },
     ],
     screensEyebrow: 'Real screens',
-    screensTitle: 'The app interface speaks for itself',
+    screensTitle: 'The interface speaks for itself',
     screens: [
       { image: 'assets/screens/home.png', title: 'Home', alt: 'Cydit home screen' },
       { image: 'assets/screens/memory.png', title: 'Memory', alt: 'Cydit memory screen' },
@@ -207,144 +205,26 @@ const defaultContent = {
       { quarter: 'Q1 2025', badge: '', title: 'Knowledge Graph', text: 'Full visual knowledge graph, cross-memory connections, graph export.' },
       { quarter: 'Q2 2025', badge: '', title: 'AI OS Platform', text: 'Complete AI operating system, integrations, team workspaces.' },
     ],
-    launchEyebrow: 'Beta ready',
-    launchTitle: 'Cydit is ready for first users',
-    launchText: 'The site can be shown to investors, early users, and the team. Content is managed from a hidden admin panel.',
-    launchCta: 'Login to account',
+    faqEyebrow: 'FAQ',
+    faqTitle: 'Questions, answered',
+    faq: [
+      { q: 'What exactly is Cydit?', a: 'Cydit is an AI memory layer for your thinking. You capture thoughts by voice or text, and it turns them into structured memory, plans, and next steps you can return to anytime.' },
+      { q: 'How is it different from Notion or ChatGPT?', a: 'Notion stores what you type; ChatGPT forgets you between chats. Cydit remembers everything over time, connects it into a knowledge graph, and proactively suggests what matters next.' },
+      { q: 'Do I have to organize anything manually?', a: 'No. Cydit auto-organizes every thought — no folders, tags, or manual sorting. You just capture; it structures.' },
+      { q: 'Which platforms are supported?', a: 'iOS and web are available in the public beta, with deeper memory, graph export, and team workspaces already on the roadmap.' },
+      { q: 'When can I start?', a: 'The public beta is live now. Join the waitlist to get early access and shape where Cydit goes next.' },
+    ],
+    ctaEyebrow: 'Early access',
+    ctaTitle: 'Give your mind a second brain',
+    ctaText: 'Join the waitlist and be among the first to turn thoughts into a system that works for you.',
+    ctaPlaceholder: 'you@email.com',
+    ctaButton: 'Join the waitlist',
+    ctaSuccess: 'You are on the list — we will be in touch soon. ✨',
     footerText: 'AI memory that turns thoughts into motion.',
-    telegramLabel: 'Telegram',
-    loginEyebrow: 'Login',
-    loginTitle: 'Login to Cydit',
-    loginField: 'Email / login',
-    passwordField: 'Password',
-    adminEyebrow: 'Admin',
-    adminTitle: 'Site editor',
-    logout: 'Logout',
-    save: 'Save changes',
-    reset: 'Reset',
-    saved: 'Saved',
-    resetDone: 'Content reset',
-    exportDone: 'JSON copied to clipboard',
-    userLogged: 'Logged in. Admin panel is available only to the owner.',
-    adminLogged: 'Admin panel is open.',
-    emptyLogin: 'Enter login and password.',
   },
 };
 
-const adminUi = {
-  ru: {
-    global: 'Общее',
-    visibility: 'Видимость секций',
-    texts: 'Тексты',
-    navigation: 'Навигация',
-    signals: 'Сигналы',
-    metrics: 'Метрики',
-    features: 'Блоки продукта',
-    flow: 'Маршрут',
-    screens: 'Скриншоты',
-    add: 'Добавить',
-    remove: 'Удалить',
-    export: 'Экспорт JSON',
-    reset: 'Сбросить',
-    logo: 'Логотип',
-    heroMainImage: 'Главное фото hero',
-    heroSideImage: 'Второе фото hero',
-    email: 'Почта',
-    telegram: 'Telegram',
-    title: 'Заголовок',
-    text: 'Текст',
-    label: 'Подпись',
-    image: 'Фото',
-    alt: 'Alt текст',
-    href: 'Ссылка',
-    number: 'Номер',
-    value: 'Значение',
-    quarter: 'Квартал',
-    badge: 'Бейдж',
-  },
-  en: {
-    global: 'Global',
-    visibility: 'Section visibility',
-    texts: 'Texts',
-    navigation: 'Navigation',
-    signals: 'Signals',
-    metrics: 'Metrics',
-    features: 'Product blocks',
-    flow: 'Flow',
-    screens: 'Screenshots',
-    add: 'Add',
-    remove: 'Remove',
-    export: 'Export JSON',
-    reset: 'Reset',
-    logo: 'Logo',
-    heroMainImage: 'Hero main image',
-    heroSideImage: 'Hero side image',
-    email: 'Email',
-    telegram: 'Telegram',
-    title: 'Title',
-    text: 'Text',
-    label: 'Label',
-    image: 'Image',
-    alt: 'Alt text',
-    href: 'Link',
-    number: 'Number',
-    value: 'Value',
-    quarter: 'Quarter',
-    badge: 'Badge',
-  },
-};
-
-const state = {
-  content: loadContent(),
-  lang: localStorage.getItem(LANG_KEY) === 'en' ? 'en' : 'ru',
-  editLang: localStorage.getItem(EDIT_LANG_KEY) === 'en' ? 'en' : 'ru',
-  auth: loadAuth(),
-};
-
-function clone(value) {
-  return JSON.parse(JSON.stringify(value));
-}
-
-function merge(base, patch) {
-  for (const [key, value] of Object.entries(patch || {})) {
-    if (Array.isArray(value)) base[key] = value;
-    else if (value && typeof value === 'object') base[key] = merge(base[key] || {}, value);
-    else base[key] = value;
-  }
-  return base;
-}
-
-function loadContent() {
-  try {
-    return merge(clone(defaultContent), JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'));
-  } catch (_) {
-    return clone(defaultContent);
-  }
-}
-
-function loadAuth() {
-  try {
-    return JSON.parse(localStorage.getItem(AUTH_KEY) || '{"role":"guest"}');
-  } catch (_) {
-    return { role: 'guest' };
-  }
-}
-
-function saveContent() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state.content));
-}
-
-function saveAuth() {
-  localStorage.setItem(AUTH_KEY, JSON.stringify(state.auth));
-}
-
-function locale(lang = state.lang) {
-  return state.content[lang] || state.content.ru;
-}
-
-function ui(key) {
-  return adminUi[state.lang]?.[key] || adminUi.en[key] || key;
-}
+let lang = localStorage.getItem(LANG_KEY) === 'en' ? 'en' : 'ru';
 
 function esc(value) {
   return String(value ?? '')
@@ -355,56 +235,60 @@ function esc(value) {
     .replaceAll("'", '&#39;');
 }
 
-function render() {
-  const copy = locale();
-  document.documentElement.lang = state.lang;
-  document.title = `${copy.brandName} - ${copy.heroTitle}`;
-  document.querySelector('[data-lang-toggle]').textContent = state.lang.toUpperCase();
-
-  document.querySelectorAll('[data-text]').forEach((node) => {
-    node.textContent = copy[node.dataset.text] ?? '';
-  });
-
-  document.querySelectorAll('[data-image]').forEach((node) => {
-    const key = node.dataset.image;
-    node.src = state.content.images[key] || '';
-  });
-
-  renderNav(copy);
-  renderSignals(copy);
-  renderMetrics(copy);
-  renderFeatures(copy);
-  renderFlow(copy);
-  renderScreens(copy);
-  renderCompare(copy);
-  renderRoadmap(copy);
-  renderLinks();
-  renderSections();
-  renderAdmin();
+function copy() {
+  return content[lang] || content.ru;
 }
 
-function renderNav(copy) {
-  document.getElementById('mainNav').innerHTML = copy.nav
+function render() {
+  const c = copy();
+  document.documentElement.lang = lang;
+  document.title = `${c.brandName} — ${c.heroTitle}`;
+  document.querySelector('[data-lang-toggle]').textContent = lang.toUpperCase();
+
+  document.querySelectorAll('[data-text]').forEach((node) => {
+    node.textContent = c[node.dataset.text] ?? '';
+  });
+  document.querySelectorAll('[data-image]').forEach((node) => {
+    node.src = content.images[node.dataset.image] || '';
+  });
+  document.querySelectorAll('[data-attr-placeholder]').forEach((node) => {
+    node.placeholder = c[node.dataset.attrPlaceholder] ?? '';
+  });
+
+  renderNav(c);
+  renderSignals(c);
+  renderMetrics(c);
+  renderFeatures(c);
+  renderFlow(c);
+  renderScreens(c);
+  renderCompare(c);
+  renderRoadmap(c);
+  renderFaq(c);
+  renderLinks(c);
+}
+
+function renderNav(c) {
+  document.getElementById('mainNav').innerHTML = c.nav
     .map((item) => `<a href="${esc(item.href)}">${esc(item.label)}</a>`)
     .join('');
 }
 
-function renderSignals(copy) {
-  document.getElementById('signalRow').innerHTML = copy.signals.map((item) => `<span>${esc(item)}</span>`).join('');
+function renderSignals(c) {
+  document.getElementById('signalRow').innerHTML = c.signals.map((item) => `<span>${esc(item)}</span>`).join('');
 }
 
-function renderMetrics(copy) {
-  document.getElementById('metricBand').innerHTML = copy.metrics
+function renderMetrics(c) {
+  document.getElementById('metricBand').innerHTML = c.metrics
     .map((item) => `<article><strong>${esc(item.value)}</strong><span>${esc(item.label)}</span></article>`)
     .join('');
 }
 
-function renderFeatures(copy) {
-  document.getElementById('featureGrid').innerHTML = copy.features
+function renderFeatures(c) {
+  document.getElementById('featureGrid').innerHTML = c.features
     .map(
-      (item) => `
+      (item, i) => `
         <article class="feature-card">
-          <span>${esc(item.number)}</span>
+          <span class="feature-icon">${FEATURE_ICONS[i % FEATURE_ICONS.length]}</span>
           <h3>${esc(item.title)}</h3>
           <p>${esc(item.text)}</p>
         </article>`,
@@ -412,27 +296,34 @@ function renderFeatures(copy) {
     .join('');
 }
 
-function renderFlow(copy) {
-  document.getElementById('flowTrack').innerHTML = copy.flow
-    .map((item) => `<article><strong>${esc(item.number)}</strong><span>${esc(item.label)}</span></article>`)
+function renderFlow(c) {
+  document.getElementById('flowTrack').innerHTML = c.flow
+    .map(
+      (item) => `
+        <article class="flow-step">
+          <span class="flow-num">${esc(item.number)}</span>
+          <strong>${esc(item.label)}</strong>
+          <span class="flow-sub">${esc(item.text)}</span>
+        </article>`,
+    )
     .join('');
 }
 
-function renderScreens(copy) {
-  document.getElementById('screenGrid').innerHTML = copy.screens
+function renderScreens(c) {
+  document.getElementById('screenGrid').innerHTML = c.screens
     .map(
       (item) => `
         <figure>
-          <img src="${esc(item.image)}" alt="${esc(item.alt)}" />
+          <img src="${esc(item.image)}" alt="${esc(item.alt)}" loading="lazy" />
           <figcaption>${esc(item.title)}</figcaption>
         </figure>`,
     )
     .join('');
 }
 
-function renderCompare(copy) {
+function renderCompare(c) {
   const table = document.getElementById('compareTable');
-  const data = copy.compare;
+  const data = c.compare;
   if (!table || !data) return;
   const cols = data.columns;
   table.innerHTML = `
@@ -471,10 +362,10 @@ function renderCompare(copy) {
     </tbody>`;
 }
 
-function renderRoadmap(copy) {
+function renderRoadmap(c) {
   const track = document.getElementById('roadmapTrack');
-  if (!track || !copy.roadmap) return;
-  track.innerHTML = copy.roadmap
+  if (!track || !c.roadmap) return;
+  track.innerHTML = c.roadmap
     .map(
       (item) => `
       <article class="roadmap-item">
@@ -492,311 +383,75 @@ function renderRoadmap(copy) {
     .join('');
 }
 
-function renderLinks() {
-  const email = state.content.links.email;
-  const telegram = state.content.links.telegram;
-  document.getElementById('emailLink').href = `mailto:${email}`;
-  document.getElementById('emailLink').textContent = email;
-  document.getElementById('telegramLink').href = telegram;
-  document.getElementById('telegramLink').textContent = locale().telegramLabel;
+function renderFaq(c) {
+  const list = document.getElementById('faqList');
+  if (!list || !c.faq) return;
+  list.innerHTML = c.faq
+    .map(
+      (item) => `
+      <details class="faq-item">
+        <summary>
+          <span>${esc(item.q)}</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-answer">${esc(item.a)}</div>
+      </details>`,
+    )
+    .join('');
 }
 
-function renderSections() {
-  document.querySelectorAll('[data-section-node]').forEach((node) => {
-    const key = node.dataset.sectionNode;
-    node.hidden = state.content.sections[key] === false;
-  });
+function renderLinks(c) {
+  const email = content.links.email;
+  const emailLink = document.getElementById('emailLink');
+  const tgLink = document.getElementById('telegramLink');
+  emailLink.href = `mailto:${email}`;
+  emailLink.textContent = email;
+  tgLink.href = content.links.telegram;
+  tgLink.textContent = 'Telegram';
 }
 
-function renderAdmin() {
-  const panel = document.getElementById('adminPanel');
-  panel.hidden = state.auth.role !== 'admin';
-  if (panel.hidden) return;
-
-  document.querySelector('[data-export-content]').textContent = ui('export');
-  document.querySelector('[data-reset]').textContent = ui('reset');
-
-  document.querySelectorAll('[data-edit-lang]').forEach((button) => {
-    button.classList.toggle('is-active', button.dataset.editLang === state.editLang);
-  });
-
-  document.getElementById('adminForm').innerHTML = buildAdminForm();
-}
-
-function buildAdminForm() {
-  const copy = locale(state.editLang);
-  return `
-    <fieldset>
-      <legend>${esc(ui('global'))}</legend>
-      ${textInput('links.email', ui('email'), state.content.links.email)}
-      ${textInput('links.telegram', ui('telegram'), state.content.links.telegram)}
-      ${imageInput('images.brandLogo', ui('logo'), state.content.images.brandLogo)}
-      ${imageInput('images.heroMainImage', ui('heroMainImage'), state.content.images.heroMainImage)}
-      ${imageInput('images.heroSideImage', ui('heroSideImage'), state.content.images.heroSideImage)}
-    </fieldset>
-
-    <fieldset>
-      <legend>${esc(ui('visibility'))}</legend>
-      ${Object.entries(state.content.sections)
-        .map(([key, value]) => toggleInput(`sections.${key}`, key, value))
-        .join('')}
-    </fieldset>
-
-    <fieldset>
-      <legend>${esc(ui('texts'))} (${state.editLang.toUpperCase()})</legend>
-      ${textInput(`${state.editLang}.brandName`, 'brandName', copy.brandName)}
-      ${textInput(`${state.editLang}.loginButton`, 'loginButton', copy.loginButton)}
-      ${textInput(`${state.editLang}.openApp`, 'openApp', copy.openApp)}
-      ${textInput(`${state.editLang}.heroEyebrow`, 'heroEyebrow', copy.heroEyebrow)}
-      ${textInput(`${state.editLang}.heroTitle`, 'heroTitle', copy.heroTitle)}
-      ${textareaInput(`${state.editLang}.heroText`, 'heroText', copy.heroText)}
-      ${textInput(`${state.editLang}.heroPrimary`, 'heroPrimary', copy.heroPrimary)}
-      ${textInput(`${state.editLang}.heroSecondary`, 'heroSecondary', copy.heroSecondary)}
-      ${textInput(`${state.editLang}.productEyebrow`, 'productEyebrow', copy.productEyebrow)}
-      ${textInput(`${state.editLang}.productTitle`, 'productTitle', copy.productTitle)}
-      ${textInput(`${state.editLang}.flowEyebrow`, 'flowEyebrow', copy.flowEyebrow)}
-      ${textInput(`${state.editLang}.flowTitle`, 'flowTitle', copy.flowTitle)}
-      ${textInput(`${state.editLang}.screensEyebrow`, 'screensEyebrow', copy.screensEyebrow)}
-      ${textInput(`${state.editLang}.screensTitle`, 'screensTitle', copy.screensTitle)}
-      ${textInput(`${state.editLang}.compareEyebrow`, 'compareEyebrow', copy.compareEyebrow)}
-      ${textInput(`${state.editLang}.compareTitle`, 'compareTitle', copy.compareTitle)}
-      ${textInput(`${state.editLang}.roadmapEyebrow`, 'roadmapEyebrow', copy.roadmapEyebrow)}
-      ${textInput(`${state.editLang}.roadmapTitle`, 'roadmapTitle', copy.roadmapTitle)}
-      ${textInput(`${state.editLang}.launchEyebrow`, 'launchEyebrow', copy.launchEyebrow)}
-      ${textInput(`${state.editLang}.launchTitle`, 'launchTitle', copy.launchTitle)}
-      ${textareaInput(`${state.editLang}.launchText`, 'launchText', copy.launchText)}
-      ${textInput(`${state.editLang}.launchCta`, 'launchCta', copy.launchCta)}
-      ${textInput(`${state.editLang}.footerText`, 'footerText', copy.footerText)}
-      ${textInput(`${state.editLang}.telegramLabel`, 'telegramLabel', copy.telegramLabel)}
-      ${textInput(`${state.editLang}.loginEyebrow`, 'loginEyebrow', copy.loginEyebrow)}
-      ${textInput(`${state.editLang}.loginTitle`, 'loginTitle', copy.loginTitle)}
-      ${textInput(`${state.editLang}.loginField`, 'loginField', copy.loginField)}
-      ${textInput(`${state.editLang}.passwordField`, 'passwordField', copy.passwordField)}
-      ${textInput(`${state.editLang}.adminEyebrow`, 'adminEyebrow', copy.adminEyebrow)}
-      ${textInput(`${state.editLang}.adminTitle`, 'adminTitle', copy.adminTitle)}
-      ${textInput(`${state.editLang}.logout`, 'logout', copy.logout)}
-      ${textInput(`${state.editLang}.save`, 'save', copy.save)}
-      ${textInput(`${state.editLang}.reset`, 'reset', copy.reset)}
-    </fieldset>
-
-    ${arrayEditor(ui('navigation'), `${state.editLang}.nav`, copy.nav, ['label', 'href'])}
-    ${simpleArrayEditor(ui('signals'), `${state.editLang}.signals`, copy.signals)}
-    ${arrayEditor(ui('metrics'), `${state.editLang}.metrics`, copy.metrics, ['value', 'label'])}
-    ${arrayEditor(ui('features'), `${state.editLang}.features`, copy.features, ['number', 'title', 'text'])}
-    ${arrayEditor(ui('flow'), `${state.editLang}.flow`, copy.flow, ['number', 'label'])}
-    ${arrayEditor(ui('screens'), `${state.editLang}.screens`, copy.screens, ['image', 'title', 'alt'], true)}
-    ${arrayEditor('Roadmap', `${state.editLang}.roadmap`, copy.roadmap, ['quarter', 'badge', 'title', 'text'])}
-
-    <div class="admin-actions admin-actions-bottom">
-      <button class="primary-button" type="submit">${esc(copy.save)}</button>
-    </div>
-  `;
-}
-
-function textInput(path, label, value) {
-  return `<label><span>${esc(label)}</span><input data-admin-path="${esc(path)}" value="${esc(value)}" /></label>`;
-}
-
-function textareaInput(path, label, value) {
-  return `<label><span>${esc(label)}</span><textarea data-admin-path="${esc(path)}" rows="4">${esc(value)}</textarea></label>`;
-}
-
-function imageInput(path, label, value) {
-  return `
-    <label>
-      <span>${esc(label)}</span>
-      <input data-admin-path="${esc(path)}" value="${esc(value)}" />
-      <input class="file-input" type="file" accept="image/*" data-upload-target="${esc(path)}" />
-    </label>`;
-}
-
-function toggleInput(path, label, value) {
-  return `
-    <label class="toggle-row">
-      <span>${esc(label)}</span>
-      <input type="checkbox" data-admin-path="${esc(path)}" ${value ? 'checked' : ''} />
-    </label>`;
-}
-
-function arrayEditor(title, path, rows, fields, imageFields = false) {
-  return `
-    <fieldset>
-      <legend>${esc(title)}</legend>
-      <div class="repeat-list" data-repeat="${esc(path)}">
-        ${rows
-          .map(
-            (row, index) => `
-              <article class="repeat-item">
-                <div class="repeat-top">
-                  <strong>${index + 1}</strong>
-                  <button class="mini-button" type="button" data-remove-row="${esc(path)}" data-index="${index}">${esc(ui('remove'))}</button>
-                </div>
-                ${fields
-                  .map((field) =>
-                    field === 'text'
-                      ? textareaInput(`${path}.${index}.${field}`, ui(field), row[field])
-                      : imageFields && field === 'image'
-                        ? imageInput(`${path}.${index}.${field}`, ui(field), row[field])
-                        : textInput(`${path}.${index}.${field}`, ui(field), row[field]),
-                  )
-                  .join('')}
-              </article>`,
-          )
-          .join('')}
-      </div>
-      <button class="secondary-button" type="button" data-add-row="${esc(path)}" data-fields="${esc(fields.join(','))}">${esc(ui('add'))} ${esc(title)}</button>
-    </fieldset>`;
-}
-
-function simpleArrayEditor(title, path, rows) {
-  return `
-    <fieldset>
-      <legend>${esc(title)}</legend>
-      <div class="repeat-list">
-        ${rows.map((value, index) => textInput(`${path}.${index}`, `${title} ${index + 1}`, value)).join('')}
-      </div>
-      <button class="secondary-button" type="button" data-add-simple="${esc(path)}">${esc(ui('add'))} ${esc(title)}</button>
-    </fieldset>`;
-}
-
-function setPath(path, value) {
-  const parts = path.split('.');
-  let target = state.content;
-  parts.slice(0, -1).forEach((part) => {
-    target = target[Number.isNaN(Number(part)) ? part : Number(part)];
-  });
-  const last = parts.at(-1);
-  target[Number.isNaN(Number(last)) ? last : Number(last)] = value;
-}
-
-function getPath(path) {
-  return path.split('.').reduce((target, part) => target?.[Number.isNaN(Number(part)) ? part : Number(part)], state.content);
-}
-
-function syncAdminForm() {
-  document.querySelectorAll('[data-admin-path]').forEach((field) => {
-    const value = field.type === 'checkbox' ? field.checked : field.value;
-    setPath(field.dataset.adminPath, value);
-  });
-}
-
-function openLogin() {
-  const dialog = document.getElementById('loginDialog');
-  document.getElementById('loginMessage').textContent = '';
-  if (typeof dialog.showModal === 'function') dialog.showModal();
-  else dialog.setAttribute('open', '');
-}
-
-function closeLogin() {
-  const dialog = document.getElementById('loginDialog');
-  if (typeof dialog.close === 'function') dialog.close();
-  else dialog.removeAttribute('open');
-}
-
-document.addEventListener('click', async (event) => {
-  if (event.target.closest('[data-open-login]')) openLogin();
-
-  if (event.target.closest('[data-close-login]')) closeLogin();
-
-  if (event.target.closest('[data-lang-toggle]')) {
-    state.lang = state.lang === 'ru' ? 'en' : 'ru';
-    localStorage.setItem(LANG_KEY, state.lang);
-    render();
-  }
-
-  const editLang = event.target.closest('[data-edit-lang]');
-  if (editLang) {
-    syncAdminForm();
-    state.editLang = editLang.dataset.editLang;
-    localStorage.setItem(EDIT_LANG_KEY, state.editLang);
-    render();
-  }
-
-  if (event.target.closest('[data-logout]')) {
-    state.auth = { role: 'guest' };
-    saveAuth();
-    render();
-  }
-
-  if (event.target.closest('[data-reset]')) {
-    state.content = clone(defaultContent);
-    saveContent();
-    render();
-    window.alert(locale().resetDone);
-  }
-
-  if (event.target.closest('[data-export-content]')) {
-    const json = JSON.stringify(state.content, null, 2);
-    await navigator.clipboard?.writeText(json);
-    window.alert(locale().exportDone);
-  }
-
-  const addRow = event.target.closest('[data-add-row]');
-  if (addRow) {
-    syncAdminForm();
-    const fields = addRow.dataset.fields.split(',');
-    getPath(addRow.dataset.addRow).push(Object.fromEntries(fields.map((field) => [field, ''])));
-    render();
-  }
-
-  const addSimple = event.target.closest('[data-add-simple]');
-  if (addSimple) {
-    syncAdminForm();
-    getPath(addSimple.dataset.addSimple).push('');
-    render();
-  }
-
-  const removeRow = event.target.closest('[data-remove-row]');
-  if (removeRow) {
-    syncAdminForm();
-    getPath(removeRow.dataset.removeRow).splice(Number(removeRow.dataset.index), 1);
-    render();
-  }
+/* Language toggle */
+document.querySelector('[data-lang-toggle]').addEventListener('click', () => {
+  lang = lang === 'ru' ? 'en' : 'ru';
+  localStorage.setItem(LANG_KEY, lang);
+  render();
 });
 
-document.addEventListener('change', (event) => {
-  const upload = event.target.closest('[data-upload-target]');
-  if (!upload?.files?.length) return;
-  const reader = new FileReader();
-  reader.onload = () => {
-    setPath(upload.dataset.uploadTarget, reader.result);
-    saveContent();
-    render();
-  };
-  reader.readAsDataURL(upload.files[0]);
-});
-
-document.getElementById('loginForm').addEventListener('submit', (event) => {
+/* Waitlist (front-end only — wire to a backend/form service later) */
+const waitlistForm = document.getElementById('waitlistForm');
+waitlistForm?.addEventListener('submit', (event) => {
   event.preventDefault();
-  const form = event.currentTarget;
-  const login = form.elements.login.value.trim();
-  const password = form.elements.password.value.trim();
-  const message = document.getElementById('loginMessage');
-
-  if (!login || !password) {
-    message.textContent = locale().emptyLogin;
+  const email = document.getElementById('waitlistEmail');
+  if (!email.value.trim() || !email.checkValidity()) {
+    email.reportValidity?.();
     return;
   }
+  waitlistForm.hidden = true;
+  const success = document.getElementById('waitlistSuccess');
+  success.textContent = copy().ctaSuccess;
+  success.hidden = false;
+});
 
-  if (login === 'sisadmin' && password === 'sisadmin') {
-    state.auth = { role: 'admin', login };
-    message.textContent = locale().adminLogged;
-  } else {
-    state.auth = { role: 'user', login };
-    message.textContent = locale().userLogged;
+/* Scroll reveal */
+function observeReveal() {
+  const els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach((el) => el.classList.add('is-visible'));
+    return;
   }
-  saveAuth();
-  render();
-  setTimeout(closeLogin, 450);
-});
-
-document.getElementById('adminForm').addEventListener('submit', (event) => {
-  event.preventDefault();
-  if (state.auth.role !== 'admin') return;
-  syncAdminForm();
-  saveContent();
-  render();
-  window.alert(locale().saved);
-});
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
+  );
+  els.forEach((el) => io.observe(el));
+}
 
 render();
+observeReveal();

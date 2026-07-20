@@ -3,74 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cydit</title>
-    <meta name="description" content="Cydit turns thoughts into memory, plans, and next steps." />
+    <title>Cydit — AI memory for living thoughts</title>
+    <meta
+      name="description"
+      content="Cydit turns thoughts into memory, plans, and next steps. Speak or type — your AI second brain does the rest."
+    />
     <meta name="theme-color" content="#050509" />
     <link rel="icon" href="assets/brand/cydit-mark.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
     <script defer src="app.js"></script>
   </head>
   <body>
-    <header class="site-header">
+    <div class="bg-orbs" aria-hidden="true"></div>
+
+    <header class="site-header" id="top">
       <a class="brand" href="#top" aria-label="Cydit">
-        <img data-image="brandLogo" src="assets/brand/cydit-mark.svg" alt="" />
+        <img src="assets/brand/cydit-mark.svg" alt="" />
         <span data-text="brandName">Cydit</span>
       </a>
       <nav class="nav" id="mainNav" aria-label="Main navigation"></nav>
       <div class="header-actions">
         <button class="language-pill" type="button" data-lang-toggle>RU</button>
-        <button class="ghost-button" type="button" data-open-login data-text="loginButton">Login</button>
-        <a class="primary-button" href="#launch" data-text="openApp">Open Cydit</a>
+        <a class="ghost-button" href="#get-started" data-text="signIn">Sign in</a>
+        <a class="primary-button" href="#get-started" data-text="ctaPrimary">Get Early Access</a>
       </div>
     </header>
 
-    <main id="top">
-      <section class="hero" data-section-node="hero">
+    <main>
+      <section class="hero reveal" id="hero">
         <div class="hero-copy">
-          <p class="eyebrow" data-text="heroEyebrow">AI memory for living thoughts</p>
+          <span class="badge" data-text="heroBadge">AI OS for your mind</span>
           <h1 data-text="heroTitle">Cydit gathers thoughts into a clear system</h1>
-          <p class="hero-text" data-text="heroText">
-            Speak or type naturally. Cydit turns each thought into meaning, goals, plans, and next steps.
-          </p>
+          <p class="hero-text" data-text="heroText">Speak or type naturally. Cydit turns each thought into meaning, memory, plans, and next steps.</p>
           <div class="hero-actions">
-            <button class="primary-button" type="button" data-open-login data-text="heroPrimary">Start</button>
-            <a class="secondary-button" href="#screens" data-text="heroSecondary">View screens</a>
+            <a class="primary-button lg" href="#get-started" data-text="heroPrimary">Get Early Access</a>
+            <a class="secondary-button lg" href="#how" data-text="heroSecondary">See how it works</a>
           </div>
           <div class="signal-row" id="signalRow"></div>
         </div>
         <div class="hero-device">
+          <div class="device-glow" aria-hidden="true"></div>
           <img class="phone phone-main" data-image="heroMainImage" src="assets/screens/home.png" alt="Cydit app screen" />
           <img class="phone phone-side" data-image="heroSideImage" src="assets/screens/capture.png" alt="Cydit voice screen" />
         </div>
       </section>
 
-      <section class="metric-band" id="metricBand" data-section-node="metrics"></section>
+      <section class="metric-band reveal" id="metricBand"></section>
 
-      <section class="section product-section" id="product" data-section-node="product">
-        <div class="section-heading">
+      <section class="section reveal" id="product">
+        <div class="section-heading center">
           <p class="eyebrow" data-text="productEyebrow">Product core</p>
           <h2 data-text="productTitle">Not a chat. A thinking system.</h2>
+          <p class="section-sub" data-text="productSub">Your thoughts deserve more than a text box.</p>
         </div>
         <div class="feature-grid" id="featureGrid"></div>
       </section>
 
-      <section class="section flow-section" id="flow" data-section-node="flow">
-        <div class="section-heading">
-          <p class="eyebrow" data-text="flowEyebrow">AI route</p>
+      <section class="section reveal" id="how">
+        <div class="section-heading center">
+          <p class="eyebrow" data-text="flowEyebrow">How it works</p>
           <h2 data-text="flowTitle">From raw thought to next step</h2>
         </div>
         <div class="flow-track" id="flowTrack"></div>
       </section>
 
-      <section class="section screen-section" id="screens" data-section-node="screens">
-        <div class="section-heading">
+      <section class="section reveal" id="screens">
+        <div class="section-heading center">
           <p class="eyebrow" data-text="screensEyebrow">Real screens</p>
-          <h2 data-text="screensTitle">The app interface speaks for itself</h2>
+          <h2 data-text="screensTitle">The interface speaks for itself</h2>
         </div>
         <div class="screen-grid" id="screenGrid"></div>
       </section>
 
-      <section class="section compare-section" id="compare" data-section-node="compare">
+      <section class="section reveal" id="compare">
         <div class="section-heading center">
           <p class="eyebrow" data-text="compareEyebrow">Why Cydit</p>
           <h2 data-text="compareTitle">Nothing else comes close</h2>
@@ -80,7 +85,7 @@
         </div>
       </section>
 
-      <section class="section roadmap-section" id="roadmap" data-section-node="roadmap">
+      <section class="section reveal" id="roadmap">
         <div class="section-heading center">
           <p class="eyebrow" data-text="roadmapEyebrow">Roadmap</p>
           <h2 data-text="roadmapTitle">The road ahead</h2>
@@ -88,41 +93,40 @@
         <div class="roadmap-track" id="roadmapTrack"></div>
       </section>
 
-      <section class="section launch-section" id="launch" data-section-node="launch">
-        <div>
-          <p class="eyebrow" data-text="launchEyebrow">Beta ready</p>
-          <h2 data-text="launchTitle">Cydit is ready for first users</h2>
-          <p data-text="launchText">The site is ready to show the product, login, and hidden admin editor.</p>
+      <section class="section reveal" id="faq">
+        <div class="section-heading center">
+          <p class="eyebrow" data-text="faqEyebrow">FAQ</p>
+          <h2 data-text="faqTitle">Questions, answered</h2>
         </div>
-        <button class="primary-button" type="button" data-open-login data-text="launchCta">Login</button>
+        <div class="faq-list" id="faqList"></div>
       </section>
 
-      <section class="admin-panel" id="adminPanel" hidden>
-        <div class="admin-header">
-          <div>
-            <p class="eyebrow" data-text="adminEyebrow">Admin</p>
-            <h2 data-text="adminTitle">Site editor</h2>
-          </div>
-          <button class="ghost-button" type="button" data-logout data-text="logout">Logout</button>
+      <section class="cta-section reveal" id="get-started">
+        <div class="cta-card">
+          <p class="eyebrow" data-text="ctaEyebrow">Early access</p>
+          <h2 data-text="ctaTitle">Give your mind a second brain</h2>
+          <p class="cta-text" data-text="ctaText">Join the waitlist and be among the first.</p>
+          <form class="cta-form" id="waitlistForm" novalidate>
+            <input
+              type="email"
+              name="email"
+              id="waitlistEmail"
+              autocomplete="email"
+              data-attr-placeholder="ctaPlaceholder"
+              placeholder="you@email.com"
+              required
+            />
+            <button class="primary-button lg" type="submit" data-text="ctaButton">Join the waitlist</button>
+          </form>
+          <p class="cta-success" id="waitlistSuccess" hidden></p>
         </div>
-        <div class="admin-toolbar">
-          <div class="admin-tabs">
-            <button class="lang-tab" type="button" data-edit-lang="ru">RU</button>
-            <button class="lang-tab" type="button" data-edit-lang="en">EN</button>
-          </div>
-          <div class="admin-actions">
-            <button class="secondary-button" type="button" data-export-content>Export JSON</button>
-            <button class="secondary-button" type="button" data-reset>Reset</button>
-          </div>
-        </div>
-        <form class="admin-form" id="adminForm"></form>
       </section>
     </main>
 
-    <footer class="footer" data-section-node="footer">
-      <div>
+    <footer class="footer">
+      <div class="footer-brand">
         <a class="brand" href="#top">
-          <img data-image="brandLogo" src="assets/brand/cydit-mark.svg" alt="" />
+          <img src="assets/brand/cydit-mark.svg" alt="" />
           <span data-text="brandName">Cydit</span>
         </a>
         <p data-text="footerText">AI memory that turns thoughts into motion.</p>
@@ -130,20 +134,8 @@
       <div class="footer-links">
         <a id="emailLink" href="mailto:hello@cydit.app">hello@cydit.app</a>
         <a id="telegramLink" href="https://t.me/cydit" target="_blank" rel="noreferrer">Telegram</a>
-        <button class="link-button" type="button" data-open-login data-text="loginButton">Login</button>
+        <a href="#get-started" data-text="ctaPrimary">Get Early Access</a>
       </div>
     </footer>
-
-    <dialog class="login-dialog" id="loginDialog">
-      <form class="login-card" id="loginForm" method="dialog">
-        <button class="close-button" type="button" data-close-login aria-label="Close">x</button>
-        <p class="eyebrow" data-text="loginEyebrow">Login</p>
-        <h2 data-text="loginTitle">Login to Cydit</h2>
-        <label><span data-text="loginField">Email / login</span><input name="login" autocomplete="username" placeholder="demo@cydit.app" /></label>
-        <label><span data-text="passwordField">Password</span><input name="password" type="password" autocomplete="current-password" placeholder="********" /></label>
-        <p class="login-message" id="loginMessage"></p>
-        <button class="primary-button" type="submit" data-text="loginButton">Login</button>
-      </form>
-    </dialog>
   </body>
 </html>
