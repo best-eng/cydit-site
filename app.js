@@ -1,7 +1,12 @@
-const STORAGE_KEY = 'cydit-site-complete-content-v1';
+const STORAGE_KEY = 'cydit-site-complete-content-v2';
 const AUTH_KEY = 'cydit-site-complete-auth-v1';
 const LANG_KEY = 'cydit-site-complete-lang-v1';
 const EDIT_LANG_KEY = 'cydit-site-complete-edit-lang-v1';
+
+const ICON_CHECK =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>';
+const ICON_CROSS =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
 
 const defaultContent = {
   links: {
@@ -19,6 +24,8 @@ const defaultContent = {
     product: true,
     flow: true,
     screens: true,
+    compare: true,
+    roadmap: true,
     launch: true,
     footer: true,
   },
@@ -27,7 +34,9 @@ const defaultContent = {
     nav: [
       { label: 'Продукт', href: '#product' },
       { label: 'Маршрут AI', href: '#flow' },
+      { label: 'Сравнение', href: '#compare' },
       { label: 'Экраны', href: '#screens' },
+      { label: 'Роадмап', href: '#roadmap' },
       { label: 'Запуск', href: '#launch' },
     ],
     loginButton: 'Войти',
@@ -69,6 +78,35 @@ const defaultContent = {
       { image: 'assets/screens/insights.png', title: 'Инсайты', alt: 'Экран инсайтов Cydit' },
       { image: 'assets/screens/settings.png', title: 'Настройки', alt: 'Экран настроек Cydit' },
     ],
+    compareEyebrow: 'Почему Cydit',
+    compareTitle: 'Никто даже близко',
+    compare: {
+      columns: [
+        { name: 'Cydit', badge: 'AI OS', highlight: true },
+        { name: 'Notion' },
+        { name: 'Apple Notes' },
+        { name: 'ChatGPT' },
+        { name: 'Reflect' },
+      ],
+      rows: [
+        { feature: 'Голосовой ввод', cells: [true, false, true, true, false] },
+        { feature: 'Долгосрочная AI-память', cells: [true, false, false, false, false] },
+        { feature: 'Понимание контекста', cells: [true, false, false, true, false] },
+        { feature: 'Граф знаний', cells: [true, false, false, false, true] },
+        { feature: 'Авто-организация', cells: [true, true, false, false, false] },
+        { feature: 'Умные подсказки', cells: [true, false, false, true, false] },
+        { feature: 'Определение связей', cells: [true, false, false, false, false] },
+        { feature: 'AI-инсайты', cells: [true, false, false, false, false] },
+      ],
+    },
+    roadmapEyebrow: 'Роадмап',
+    roadmapTitle: 'Что впереди',
+    roadmap: [
+      { quarter: 'Q3 2024', badge: 'Уже доступно', title: 'Публичная бета', text: 'Голосовой захват, AI-память, базовый граф знаний, приложение для iOS и веба.' },
+      { quarter: 'Q4 2024', badge: '', title: 'Движок AI-памяти', text: 'Глубокая долгосрочная память, семантический поиск, определение связей.' },
+      { quarter: 'Q1 2025', badge: '', title: 'Граф знаний', text: 'Полный визуальный граф знаний, связи между воспоминаниями, экспорт графа.' },
+      { quarter: 'Q2 2025', badge: '', title: 'AI OS платформа', text: 'Полноценная AI-операционная система, интеграции, командные пространства.' },
+    ],
     launchEyebrow: 'Beta ready',
     launchTitle: 'Cydit готов к первым пользователям',
     launchText: 'Сайт можно показывать инвесторам, первым пользователям и команде. Контент управляется из скрытой админ-панели.',
@@ -96,7 +134,9 @@ const defaultContent = {
     nav: [
       { label: 'Product', href: '#product' },
       { label: 'AI route', href: '#flow' },
+      { label: 'Compare', href: '#compare' },
       { label: 'Screens', href: '#screens' },
+      { label: 'Roadmap', href: '#roadmap' },
       { label: 'Launch', href: '#launch' },
     ],
     loginButton: 'Login',
@@ -137,6 +177,35 @@ const defaultContent = {
       { image: 'assets/screens/memory.png', title: 'Memory', alt: 'Cydit memory screen' },
       { image: 'assets/screens/insights.png', title: 'Insights', alt: 'Cydit insights screen' },
       { image: 'assets/screens/settings.png', title: 'Settings', alt: 'Cydit settings screen' },
+    ],
+    compareEyebrow: 'Why Cydit',
+    compareTitle: 'Nothing else comes close',
+    compare: {
+      columns: [
+        { name: 'Cydit', badge: 'AI OS', highlight: true },
+        { name: 'Notion' },
+        { name: 'Apple Notes' },
+        { name: 'ChatGPT' },
+        { name: 'Reflect' },
+      ],
+      rows: [
+        { feature: 'Voice-first input', cells: [true, false, true, true, false] },
+        { feature: 'Long-term AI Memory', cells: [true, false, false, false, false] },
+        { feature: 'Context understanding', cells: [true, false, false, true, false] },
+        { feature: 'Knowledge Graph', cells: [true, false, false, false, true] },
+        { feature: 'Auto organization', cells: [true, true, false, false, false] },
+        { feature: 'Smart suggestions', cells: [true, false, false, true, false] },
+        { feature: 'Relationship detection', cells: [true, false, false, false, false] },
+        { feature: 'AI insights', cells: [true, false, false, false, false] },
+      ],
+    },
+    roadmapEyebrow: 'Roadmap',
+    roadmapTitle: 'The road ahead',
+    roadmap: [
+      { quarter: 'Q3 2024', badge: 'Live Now', title: 'Public Beta', text: 'Voice capture, AI memory, basic knowledge graph, iOS & web app.' },
+      { quarter: 'Q4 2024', badge: '', title: 'AI Memory Engine', text: 'Deep long-term memory, semantic search, relationship detection.' },
+      { quarter: 'Q1 2025', badge: '', title: 'Knowledge Graph', text: 'Full visual knowledge graph, cross-memory connections, graph export.' },
+      { quarter: 'Q2 2025', badge: '', title: 'AI OS Platform', text: 'Complete AI operating system, integrations, team workspaces.' },
     ],
     launchEyebrow: 'Beta ready',
     launchTitle: 'Cydit is ready for first users',
@@ -190,6 +259,8 @@ const adminUi = {
     href: 'Ссылка',
     number: 'Номер',
     value: 'Значение',
+    quarter: 'Квартал',
+    badge: 'Бейдж',
   },
   en: {
     global: 'Global',
@@ -218,6 +289,8 @@ const adminUi = {
     href: 'Link',
     number: 'Number',
     value: 'Value',
+    quarter: 'Quarter',
+    badge: 'Badge',
   },
 };
 
@@ -303,6 +376,8 @@ function render() {
   renderFeatures(copy);
   renderFlow(copy);
   renderScreens(copy);
+  renderCompare(copy);
+  renderRoadmap(copy);
   renderLinks();
   renderSections();
   renderAdmin();
@@ -351,6 +426,68 @@ function renderScreens(copy) {
           <img src="${esc(item.image)}" alt="${esc(item.alt)}" />
           <figcaption>${esc(item.title)}</figcaption>
         </figure>`,
+    )
+    .join('');
+}
+
+function renderCompare(copy) {
+  const table = document.getElementById('compareTable');
+  const data = copy.compare;
+  if (!table || !data) return;
+  const cols = data.columns;
+  table.innerHTML = `
+    <thead>
+      <tr>
+        <th class="compare-feature-head"></th>
+        ${cols
+          .map(
+            (col) => `
+          <th class="${col.highlight ? 'is-cydit' : ''}">
+            <span class="col-name">${esc(col.name)}</span>
+            ${col.badge ? `<span class="col-badge">${esc(col.badge)}</span>` : ''}
+          </th>`,
+          )
+          .join('')}
+      </tr>
+    </thead>
+    <tbody>
+      ${data.rows
+        .map(
+          (row) => `
+        <tr>
+          <th scope="row" class="compare-feature">${esc(row.feature)}</th>
+          ${row.cells
+            .map((cell, i) => {
+              const brand = cols[i]?.highlight;
+              const mark = cell
+                ? `<span class="mark yes${brand ? ' brand' : ''}">${ICON_CHECK}</span>`
+                : `<span class="mark no">${ICON_CROSS}</span>`;
+              return `<td class="${brand ? 'is-cydit' : ''}">${mark}</td>`;
+            })
+            .join('')}
+        </tr>`,
+        )
+        .join('')}
+    </tbody>`;
+}
+
+function renderRoadmap(copy) {
+  const track = document.getElementById('roadmapTrack');
+  if (!track || !copy.roadmap) return;
+  track.innerHTML = copy.roadmap
+    .map(
+      (item) => `
+      <article class="roadmap-item">
+        <span class="roadmap-dot"></span>
+        <div class="roadmap-card">
+          <div class="roadmap-meta">
+            <span class="roadmap-q">${esc(item.quarter)}</span>
+            ${item.badge ? `<span class="roadmap-badge">${esc(item.badge)}</span>` : ''}
+          </div>
+          <h3>${esc(item.title)}</h3>
+          <p>${esc(item.text)}</p>
+        </div>
+      </article>`,
     )
     .join('');
 }
@@ -421,6 +558,10 @@ function buildAdminForm() {
       ${textInput(`${state.editLang}.flowTitle`, 'flowTitle', copy.flowTitle)}
       ${textInput(`${state.editLang}.screensEyebrow`, 'screensEyebrow', copy.screensEyebrow)}
       ${textInput(`${state.editLang}.screensTitle`, 'screensTitle', copy.screensTitle)}
+      ${textInput(`${state.editLang}.compareEyebrow`, 'compareEyebrow', copy.compareEyebrow)}
+      ${textInput(`${state.editLang}.compareTitle`, 'compareTitle', copy.compareTitle)}
+      ${textInput(`${state.editLang}.roadmapEyebrow`, 'roadmapEyebrow', copy.roadmapEyebrow)}
+      ${textInput(`${state.editLang}.roadmapTitle`, 'roadmapTitle', copy.roadmapTitle)}
       ${textInput(`${state.editLang}.launchEyebrow`, 'launchEyebrow', copy.launchEyebrow)}
       ${textInput(`${state.editLang}.launchTitle`, 'launchTitle', copy.launchTitle)}
       ${textareaInput(`${state.editLang}.launchText`, 'launchText', copy.launchText)}
@@ -444,6 +585,7 @@ function buildAdminForm() {
     ${arrayEditor(ui('features'), `${state.editLang}.features`, copy.features, ['number', 'title', 'text'])}
     ${arrayEditor(ui('flow'), `${state.editLang}.flow`, copy.flow, ['number', 'label'])}
     ${arrayEditor(ui('screens'), `${state.editLang}.screens`, copy.screens, ['image', 'title', 'alt'], true)}
+    ${arrayEditor('Roadmap', `${state.editLang}.roadmap`, copy.roadmap, ['quarter', 'badge', 'title', 'text'])}
 
     <div class="admin-actions admin-actions-bottom">
       <button class="primary-button" type="submit">${esc(copy.save)}</button>
