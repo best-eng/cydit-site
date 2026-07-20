@@ -17,6 +17,13 @@ const FEATURE_ICONS = [
   svg('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"/>'),
 ];
 
+const USE_ICONS = [
+  svg('<path d="M12 3c3.4 1.6 5 5 5 8l-2.8 3H9.8L7 11c0-3 1.6-6.4 5-8z"/><circle cx="12" cy="9.5" r="1.6"/><path d="M9.2 17c-1.6.5-2.7 2-2.7 4 2 0 3.6-1 4.2-2.6M14.8 17c1.6.5 2.7 2 2.7 4-2 0-3.6-1-4.2-2.6"/>'),
+  svg('<path d="M4 20l4-1L19 8a2 2 0 0 0-3-3L5 16l-1 4z"/><path d="M14.5 6.5l3 3"/>'),
+  svg('<path d="M12 4l10 5-10 5L2 9z"/><path d="M6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5"/>'),
+  svg('<path d="M9 4a4 4 0 0 0-4 4 3.5 3.5 0 0 0-1 6 3.5 3.5 0 0 0 5 3M15 4a4 4 0 0 1 4 4 3.5 3.5 0 0 1 1 6 3.5 3.5 0 0 1-5 3M12 4v16"/>'),
+];
+
 const content = {
   links: {
     email: 'hello@cydit.app',
@@ -31,7 +38,8 @@ const content = {
     nav: [
       { label: 'Продукт', href: '#product' },
       { label: 'Как это работает', href: '#how' },
-      { label: 'Сравнение', href: '#compare' },
+      { label: 'Сценарии', href: '#use-cases' },
+      { label: 'Цены', href: '#pricing' },
       { label: 'Роадмап', href: '#roadmap' },
       { label: 'FAQ', href: '#faq' },
     ],
@@ -53,6 +61,38 @@ const content = {
     productEyebrow: 'Суть продукта',
     productTitle: 'Не чат. Система мышления.',
     productSub: 'Cydit построен вокруг одной идеи — твои мысли заслуживают большего, чем текстовое поле.',
+    manifestoEyebrow: 'Наша идея',
+    manifesto: {
+      before: 'Твой разум не создан быть картотекой. Cydit даёт каждой мысли ',
+      highlight: 'место, где она живёт, связывается',
+      after: ' и превращается в действие.',
+    },
+    bentoEyebrow: 'Возможности',
+    bentoTitle: 'Всё, что нужно твоему разуму — в одном месте',
+    bento: [
+      { title: 'Живой граф знаний', text: 'Каждая мысль становится узлом и связывается с темами, людьми и целями, которые растут со временем.', graph: true },
+      { title: 'Голос', text: 'Говори как есть — Cydit мгновенно расшифрует и структурирует.' },
+      { title: 'Авто-порядок', text: 'Без папок и тегов. Структура появляется сама.' },
+      { title: 'Семантический поиск', text: 'Находи мысли по смыслу, а не по точным словам.' },
+      { title: 'Всегда синхронно', text: 'iOS и веб в унисон. Твой разум — везде.' },
+    ],
+    useEyebrow: 'Сценарии',
+    useTitle: 'Создан под то, как ты думаешь',
+    cases: [
+      { title: 'Основатели и билдеры', text: 'Фиксируй стратегию, идеи и решения — не теряй нить между встречами.' },
+      { title: 'Авторы и креаторы', text: 'Превращай вспышки идей в планы, черновики и поисковый архив.' },
+      { title: 'Студенты и исследователи', text: 'Связывай источники, лекции и вопросы в один растущий граф знаний.' },
+      { title: 'Занятые головы', text: 'Разгрузи память — Cydit помнит, раскладывает и напоминает, а ты в фокусе.' },
+    ],
+    pricingEyebrow: 'Цены',
+    pricingTitle: 'Простые цены на старте',
+    pricingSub: 'Начни бесплатно. Апгрейд — когда второй мозг раскроется.',
+    pricingNote: 'Цены раннего доступа — финальные тарифы могут измениться.',
+    plans: [
+      { name: 'Free', price: '0 ₽', period: '/навсегда', tagline: 'Начни фиксировать сегодня.', features: ['Голосовой и текстовый захват', 'Базовая AI-память', 'До 500 мыслей', 'iOS и веб'], cta: 'Начать', featured: false },
+      { name: 'Pro', price: '990 ₽', period: '/мес', tagline: 'Твой полноценный второй мозг.', features: ['Безлимит мыслей', 'Глубокая долгосрочная память', 'Граф знаний и поиск', 'Умные подсказки', 'Приоритетная поддержка'], cta: 'Ранний доступ', featured: true, badge: 'Популярно' },
+      { name: 'Team', price: 'Индивид.', period: '', tagline: 'Думайте вместе.', features: ['Всё из Pro', 'Общие пространства', 'Командный граф знаний', 'Админ и SSO', 'Выделенная поддержка'], cta: 'Связаться', featured: false },
+    ],
     features: [
       { title: 'Понимает каждую мысль', text: 'AI выделяет категорию, эмоцию, намерение, цель и следующий шаг из всего, что ты фиксируешь.' },
       { title: 'Память, которая связывает', text: 'Каждая мысль соединяется с повторяющимися темами и контекстами, формируя живой граф знаний.' },
@@ -129,7 +169,8 @@ const content = {
     nav: [
       { label: 'Product', href: '#product' },
       { label: 'How it works', href: '#how' },
-      { label: 'Compare', href: '#compare' },
+      { label: 'Use cases', href: '#use-cases' },
+      { label: 'Pricing', href: '#pricing' },
       { label: 'Roadmap', href: '#roadmap' },
       { label: 'FAQ', href: '#faq' },
     ],
@@ -151,6 +192,38 @@ const content = {
     productEyebrow: 'Product core',
     productTitle: 'Not a chat. A thinking system.',
     productSub: 'Your thoughts deserve more than a text box.',
+    manifestoEyebrow: 'Our belief',
+    manifesto: {
+      before: 'Your mind was never meant to be a filing cabinet. Cydit gives every thought ',
+      highlight: 'a place to live, connect',
+      after: ', and become action.',
+    },
+    bentoEyebrow: 'Capabilities',
+    bentoTitle: 'Everything your mind needs, in one place',
+    bento: [
+      { title: 'Living knowledge graph', text: 'Every thought becomes a node, connected to themes, people, and goals that grow over time.', graph: true },
+      { title: 'Voice-first', text: 'Speak naturally; Cydit transcribes and structures instantly.' },
+      { title: 'Auto-organized', text: 'No folders, no tags. Structure just happens.' },
+      { title: 'Semantic search', text: 'Find any thought by meaning, not exact words.' },
+      { title: 'Always in sync', text: 'iOS and web, in lockstep. Your mind, everywhere.' },
+    ],
+    useEyebrow: 'Use cases',
+    useTitle: 'Built for the way you think',
+    cases: [
+      { title: 'Founders & builders', text: 'Capture strategy, product ideas, and decisions — never lose the thread between meetings.' },
+      { title: 'Writers & creators', text: 'Turn fleeting sparks into outlines, drafts, and a searchable idea vault.' },
+      { title: 'Students & researchers', text: 'Connect readings, lectures, and questions into one growing knowledge graph.' },
+      { title: 'Busy minds', text: 'Offload the mental load — Cydit remembers, organizes, and reminds so you can focus.' },
+    ],
+    pricingEyebrow: 'Pricing',
+    pricingTitle: 'Simple, early-access pricing',
+    pricingSub: 'Start free. Upgrade when your second brain does.',
+    pricingNote: 'Early-access pricing — final plans may change.',
+    plans: [
+      { name: 'Free', price: '$0', period: '/forever', tagline: 'Start capturing today.', features: ['Voice & text capture', 'Basic AI memory', 'Up to 500 thoughts', 'iOS & web'], cta: 'Get started', featured: false },
+      { name: 'Pro', price: '$12', period: '/mo', tagline: 'Your full second brain.', features: ['Unlimited thoughts', 'Deep long-term memory', 'Knowledge graph & search', 'Smart suggestions', 'Priority support'], cta: 'Get Early Access', featured: true, badge: 'Popular' },
+      { name: 'Team', price: 'Custom', period: '', tagline: 'Think together.', features: ['Everything in Pro', 'Shared workspaces', 'Team knowledge graph', 'Admin & SSO', 'Dedicated support'], cta: 'Contact us', featured: false },
+    ],
     features: [
       { title: 'Understands every thought', text: 'AI extracts category, emotion, intent, goal, and the next step from anything you capture.' },
       { title: 'Memory that connects', text: 'Each thought links to recurring themes and active contexts, building a living knowledge graph.' },
@@ -261,8 +334,12 @@ function render() {
   renderFeatures(c);
   renderFlow(c);
   renderScreens(c);
+  renderManifesto(c);
+  renderBento(c);
+  renderUseCases(c);
   renderCompare(c);
   renderRoadmap(c);
+  renderPricing(c);
   renderFaq(c);
   renderLinks(c);
 }
@@ -400,6 +477,65 @@ function renderFaq(c) {
     .join('');
 }
 
+function renderManifesto(c) {
+  const el = document.getElementById('manifestoText');
+  if (!el || !c.manifesto) return;
+  const m = c.manifesto;
+  el.innerHTML = `${esc(m.before)}<span class="grad">${esc(m.highlight)}</span>${esc(m.after)}`;
+}
+
+function renderBento(c) {
+  const grid = document.getElementById('bentoGrid');
+  if (!grid || !c.bento) return;
+  grid.innerHTML = c.bento
+    .map(
+      (item, i) => `
+        <article class="bento-card${i === 0 ? ' bento-lg' : ''}">
+          ${item.graph ? '<div class="bento-graph" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>' : ''}
+          <div class="bento-copy">
+            <h3>${esc(item.title)}</h3>
+            <p>${esc(item.text)}</p>
+          </div>
+        </article>`,
+    )
+    .join('');
+}
+
+function renderUseCases(c) {
+  const grid = document.getElementById('useGrid');
+  if (!grid || !c.cases) return;
+  grid.innerHTML = c.cases
+    .map(
+      (item, i) => `
+        <article class="use-card">
+          <span class="use-icon">${USE_ICONS[i % USE_ICONS.length]}</span>
+          <h3>${esc(item.title)}</h3>
+          <p>${esc(item.text)}</p>
+        </article>`,
+    )
+    .join('');
+}
+
+function renderPricing(c) {
+  const grid = document.getElementById('pricingGrid');
+  if (!grid || !c.plans) return;
+  grid.innerHTML = c.plans
+    .map(
+      (plan) => `
+        <article class="price-card${plan.featured ? ' featured' : ''}">
+          ${plan.featured && plan.badge ? `<span class="price-badge">${esc(plan.badge)}</span>` : ''}
+          <h3 class="price-name">${esc(plan.name)}</h3>
+          <div class="price-amount"><strong>${esc(plan.price)}</strong><span>${esc(plan.period)}</span></div>
+          <p class="price-tagline">${esc(plan.tagline)}</p>
+          <ul class="price-features">
+            ${plan.features.map((f) => `<li>${ICON_CHECK}<span>${esc(f)}</span></li>`).join('')}
+          </ul>
+          <a class="${plan.featured ? 'primary-button' : 'secondary-button'} price-cta" href="#get-started">${esc(plan.cta)}</a>
+        </article>`,
+    )
+    .join('');
+}
+
 function renderLinks(c) {
   const email = content.links.email;
   const emailLink = document.getElementById('emailLink');
@@ -451,6 +587,18 @@ function observeReveal() {
     { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
   );
   els.forEach((el) => io.observe(el));
+}
+
+/* Scroll progress bar */
+const progressBar = document.getElementById('scrollProgress');
+if (progressBar) {
+  const updateProgress = () => {
+    const h = document.documentElement;
+    const ratio = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
+    progressBar.style.width = `${Math.min(100, Math.max(0, ratio * 100))}%`;
+  };
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
 }
 
 render();
