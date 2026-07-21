@@ -1400,3 +1400,49 @@ section[id] {
     grid-column: span 1;
   }
 }
+
+/* ---------- Mobile refinements ---------- */
+@media (max-width: 720px) {
+  .site-header {
+    grid-template-columns: 1fr auto;
+    justify-items: stretch;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+  }
+  .nav {
+    display: none;
+  }
+  .header-actions {
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  .header-actions .ghost-button {
+    display: none;
+  }
+  .section,
+  .cta-section,
+  .manifesto {
+    padding-top: 66px;
+  }
+  .hero {
+    min-height: auto;
+    padding: 34px 0 8px;
+  }
+  .hero h1 {
+    max-width: 100%;
+  }
+  .hero-device {
+    min-height: 400px;
+  }
+  .section-heading {
+    margin-bottom: 24px;
+  }
+  .lg {
+    min-height: 48px;
+    padding: 0 20px;
+  }
+  .cta-card {
+    padding: 28px 20px;
+  }
+}
