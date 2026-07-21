@@ -1694,3 +1694,12 @@ section[id] {
   padding: 0;
   color: var(--muted);
 }
+
+/* Merged product lead (thesis + manifesto statement) */
+.product-lead {
+  gap: 16px;
+}
+
+.product-lead .manifesto-text {
+  margin: 4px auto 0;
+}
