@@ -107,7 +107,7 @@ const content = {
     pricingNote: 'Цены раннего доступа — финальные тарифы могут измениться.',
     plans: [
       { name: 'Free', price: '0 ₽', period: '/навсегда', tagline: 'Начни фиксировать сегодня.', features: ['Голосовой и текстовый захват', 'Базовая AI-память', 'До 500 мыслей', 'iOS и веб'], cta: 'Начать', featured: false },
-      { name: 'Pro', price: '990 ₽', period: '/мес', tagline: 'Твой полноценный второй мозг.', features: ['Безлимит мыслей', 'Глубокая долгосрочная память', 'Граф знаний и поиск', 'Умные подсказки', 'Приоритетная поддержка'], cta: 'Ранний доступ', featured: true, badge: 'Популярно' },
+      { name: 'Pro', price: '1990 ₽', period: '/мес', tagline: 'Твой полноценный второй мозг.', features: ['Безлимит мыслей', 'Глубокая долгосрочная память', 'Граф знаний и поиск', 'Умные подсказки', 'Приоритетная поддержка'], cta: 'Ранний доступ', featured: true, badge: 'Популярно' },
       { name: 'Team', price: 'Индивид.', period: '', tagline: 'Думайте вместе.', features: ['Всё из Pro', 'Общие пространства', 'Командный граф знаний', 'Админ и SSO', 'Выделенная поддержка'], cta: 'Связаться', featured: false },
     ],
     features: [
@@ -238,7 +238,7 @@ const content = {
     pricingNote: 'Early-access pricing — final plans may change.',
     plans: [
       { name: 'Free', price: '$0', period: '/forever', tagline: 'Start capturing today.', features: ['Voice & text capture', 'Basic AI memory', 'Up to 500 thoughts', 'iOS & web'], cta: 'Get started', featured: false },
-      { name: 'Pro', price: '$12', period: '/mo', tagline: 'Your full second brain.', features: ['Unlimited thoughts', 'Deep long-term memory', 'Knowledge graph & search', 'Smart suggestions', 'Priority support'], cta: 'Get Early Access', featured: true, badge: 'Popular' },
+      { name: 'Pro', price: '$19', period: '/mo', tagline: 'Your full second brain.', features: ['Unlimited thoughts', 'Deep long-term memory', 'Knowledge graph & search', 'Smart suggestions', 'Priority support'], cta: 'Get Early Access', featured: true, badge: 'Popular' },
       { name: 'Team', price: 'Custom', period: '', tagline: 'Think together.', features: ['Everything in Pro', 'Shared workspaces', 'Team knowledge graph', 'Admin & SSO', 'Dedicated support'], cta: 'Contact us', featured: false },
     ],
     features: [
@@ -351,6 +351,7 @@ function render() {
   renderFeatures(c);
   renderFlow(c);
   renderScreens(c);
+  renderHeroMocks();
   renderManifesto(c);
   renderBento(c);
   renderUseCases(c);
@@ -403,12 +404,51 @@ function renderFlow(c) {
     .join('');
 }
 
+/* ---- Drawn phone mockups (no external images) ---- */
+function mockNav(active) {
+  return `<div class="mock-nav">${[0, 1, 2, 3, 4]
+    .map((n) => `<i${n === active ? ' class="on"' : ''}></i>`)
+    .join('')}</div>`;
+}
+
+function mockInsight(label, pct) {
+  return `<div class="mock-card"><span class="mock-spark"></span><div class="mock-cc"><div class="mock-ct"><b>${esc(label)}</b><span class="mock-pct">${esc(pct)}</span></div><span class="mock-line s"></span></div></div>`;
+}
+
+function mockThought() {
+  return `<div class="mock-card"><span class="mock-spark"></span><div class="mock-cc"><span class="mock-line"></span><span class="mock-line s"></span></div></div>`;
+}
+
+function mockToggle(on) {
+  return `<div class="mock-toggle"><span class="mock-line s"></span><span class="mock-sw${on ? ' on' : ''}"></span></div>`;
+}
+
+function mockPhone(type) {
+  const body = {
+    capture: `<div class="mock-mic"></div><div class="mock-input"></div><div class="mock-row"><span class="mock-h">AI insights</span><span class="mock-link">All</span></div>${mockInsight('Goal', '86%')}${mockInsight('#want', '78%')}`,
+    home: `<div class="mock-title"></div><div class="mock-input"></div>${mockThought()}${mockThought()}${mockThought()}`,
+    memory: `<div class="mock-row"><span class="mock-h">Memory</span></div><div class="mock-graph"><span></span><span></span><span></span><span></span><span></span></div>${mockThought()}${mockThought()}`,
+    insights: `<div class="mock-row"><span class="mock-h">Insights</span><span class="mock-link">All</span></div>${mockInsight('Focus', '92%')}${mockInsight('Ideas', '74%')}${mockInsight('Mood', '63%')}`,
+    settings: `<div class="mock-row"><span class="mock-h">Settings</span></div>${mockToggle(true)}${mockToggle(false)}${mockToggle(true)}${mockToggle(true)}`,
+  }[type] || '';
+  const active = { home: 0, memory: 1, capture: 2, insights: 3, settings: 4 }[type] ?? 0;
+  return `<div class="mock-frame"><span class="mock-notch"></span><div class="mock-screen">${body}${mockNav(active)}</div></div>`;
+}
+
+function renderHeroMocks() {
+  const main = document.getElementById('heroPhoneMain');
+  const side = document.getElementById('heroPhoneSide');
+  if (main) main.innerHTML = mockPhone('capture');
+  if (side) side.innerHTML = mockPhone('insights');
+}
+
 function renderScreens(c) {
+  const types = ['home', 'memory', 'insights', 'settings'];
   document.getElementById('screenGrid').innerHTML = c.screens
     .map(
-      (item) => `
-        <figure>
-          <img src="${esc(item.image)}" alt="${esc(item.alt)}" loading="lazy" />
+      (item, i) => `
+        <figure class="screen-item">
+          ${mockPhone(types[i % types.length])}
           <figcaption>${esc(item.title)}</figcaption>
         </figure>`,
     )
