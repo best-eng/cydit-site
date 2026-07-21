@@ -1703,3 +1703,33 @@ section[id] {
 .product-lead .manifesto-text {
   margin: 4px auto 0;
 }
+
+/* ---------- Mobile hero device: single centered phone, no overlap ---------- */
+@media (max-width: 720px) {
+  .hero-device {
+    position: relative;
+    min-height: 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  .phone {
+    position: static;
+  }
+  .phone-side {
+    display: none;
+  }
+  .phone-main {
+    width: min(260px, 72vw);
+    left: auto;
+    right: auto;
+    top: auto;
+    transform: none;
+  }
+  .device-glow {
+    top: 20px;
+    right: auto;
+    width: 300px;
+    height: 300px;
+  }
+}
