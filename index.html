@@ -6,15 +6,12 @@
     <title>Cydit — AI-операционная система для мышления</title>
     <meta
       name="description"
-      content="Cydit превращает мысли, сказанные или записанные, в память, цели, задачи и следующий шаг. Закрытая бета на Android."
+      content="Говори — Cydit превращает мысли в цели, задачи и следующий шаг. Закрытая бета на Android."
     />
-    <meta name="theme-color" content="#03070D" />
+    <meta name="theme-color" content="#06060C" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Cydit — AI-операционная система для мышления" />
-    <meta
-      property="og:description"
-      content="Говори или пиши как есть. Cydit понимает мысль и доводит её до следующего шага."
-    />
+    <meta property="og:description" content="Говори. Cydit превращает мысли в действия." />
     <meta property="og:image" content="assets/brand/og.png" />
     <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml" />
     <link rel="alternate icon" href="assets/brand/favicon-32.png" sizes="32x32" type="image/png" />
@@ -30,47 +27,41 @@
   <body>
     <svg class="sprite" aria-hidden="true" focusable="false">
       <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" /><path d="M5 11a7 7 0 0 0 14 0M12 18v3" /></symbol>
+      <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11" /><circle cx="4.5" cy="6" r="1" /><circle cx="4.5" cy="12" r="1" /><circle cx="4.5" cy="18" r="1" /></symbol>
       <symbol id="i-spark" viewBox="0 0 24 24"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z" /><path d="M18.5 15l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z" /></symbol>
-      <symbol id="i-hub" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.4" /><circle cx="5" cy="6" r="1.8" /><circle cx="19" cy="6" r="1.8" /><circle cx="5" cy="18" r="1.8" /><circle cx="19" cy="18" r="1.8" /><path d="M10.1 10.5L6.4 7.2M13.9 10.5l3.7-3.3M10.1 13.5l-3.7 3.3M13.9 13.5l3.7 3.3" /></symbol>
-      <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4h11l-2 4.5 2 4.5H6" /></symbol>
       <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="3" /><path d="M4 10h16M8 3v4M16 3v4" /></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M5 20V11M12 20V4M19 20v-6" /></symbol>
       <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.4-2.9 7.6-7 9.5-4.1-1.9-7-5.1-7-9.5V6z" /><path d="M9 12l2.2 2.2L15 10.5" /></symbol>
-      <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7" /></symbol>
-      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></symbol>
-      <symbol id="i-nav" viewBox="0 0 24 24"><path d="M20 4L4 11l7 2 2 7z" /></symbol>
-      <symbol id="i-tag" viewBox="0 0 24 24"><path d="M4 12V5a1 1 0 0 1 1-1h7l8 8-8 8z" /><circle cx="8.5" cy="8.5" r="1.2" /></symbol>
-      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="3" /><path d="M8 10V8a4 4 0 0 1 8 0v2" /></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" /><circle cx="12" cy="12" r="4.5" /><circle cx="12" cy="12" r="0.8" /></symbol>
+      <symbol id="i-task" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4" /><path d="M8.5 12.2l2.4 2.4 4.6-5" /></symbol>
+      <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.3 1 2.2h5.2c0-.9.4-1.7 1-2.2A6 6 0 0 0 12 3z" /></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15zM10 20a2 2 0 0 0 4 0" /></symbol>
+      <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4h11l-2 4.5 2 4.5H6" /></symbol>
       <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.2" /><circle cx="18" cy="6" r="2.2" /><path d="M8.2 18H14a3.5 3.5 0 0 0 0-7h-4a3.5 3.5 0 0 1 0-7h5.8" /></symbol>
-      <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M3 3l18 18M10.6 6.2A9.6 9.6 0 0 1 12 6c5 0 8.5 4.2 9.5 6-.4.8-1.3 2-2.6 3.2M6.3 7.7C4.3 9 3 10.9 2.5 12c1 1.8 4.5 6 9.5 6 1.4 0 2.7-.3 3.8-.8" /><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2" /></symbol>
-      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14" /></symbol>
+      <symbol id="i-step" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></symbol>
+      <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2.5-6 4 12 2.5-6H21" /></symbol>
+      <symbol id="i-why" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M9.5 9.5a2.5 2.5 0 1 1 3.6 2.2c-.7.4-1.1 1-1.1 1.8M12 17h.01" /></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3.2 2" /></symbol>
       <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M12 3c3.4 1.6 5 5 5 8l-2.8 3H9.8L7 11c0-3 1.6-6.4 5-8z" /><circle cx="12" cy="9.5" r="1.6" /><path d="M9.2 17c-1.6.5-2.7 2-2.7 4 2 0 3.6-1 4.2-2.6M14.8 17c1.6.5 2.7 2 2.7 4-2 0-3.6-1-4.2-2.6" /></symbol>
-      <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l4-1L19 8a2.1 2.1 0 0 0-3-3L5 16z" /><path d="M14.5 6.5l3 3" /></symbol>
-      <symbol id="i-study" viewBox="0 0 24 24"><path d="M12 4l10 5-10 5L2 9z" /><path d="M6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5" /></symbol>
-      <symbol id="i-mind" viewBox="0 0 24 24"><path d="M9 4a4 4 0 0 0-4 4 3.5 3.5 0 0 0-1 6 3.5 3.5 0 0 0 5 3M15 4a4 4 0 0 1 4 4 3.5 3.5 0 0 1 1 6 3.5 3.5 0 0 1-5 3M12 4v16" /></symbol>
       <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" /></symbol>
       <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" /></symbol>
-      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" /></symbol>
     </svg>
 
-    <div class="backdrop" aria-hidden="true">
-      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-        <path class="ridge-far" d="M0 522L160 438 300 490 480 392 630 470 790 416 1000 500V1000H0z" />
-        <path class="ridge-near" d="M0 575L240 490 420 558 700 465 1000 568V1000H0z" />
-      </svg>
-    </div>
+    <div class="backdrop" aria-hidden="true"></div>
 
     <a class="skip-link" href="#main" data-i18n="skip">К содержанию</a>
 
     <header class="site-header" id="top">
       <div class="header-bar">
         <a class="brand" href="#top" aria-label="Cydit">
-          <img src="assets/brand/cydit-mark.svg" width="30" height="30" alt="" />
+          <img src="assets/brand/cydit-mark.svg" width="32" height="32" alt="" />
           <span>Cydit</span>
         </a>
         <nav class="nav" id="nav" aria-label="Основная навигация" data-i18n-aria="nav.label">
-          <a href="#product" data-i18n="nav.product">Продукт</a>
+          <a href="#features" data-i18n="nav.features">Возможности</a>
           <a href="#how" data-i18n="nav.how">Как это работает</a>
-          <a href="#screens" data-i18n="nav.screens">Экраны</a>
+          <a href="#for" data-i18n="nav.for">Для кого</a>
           <a href="#plans" data-i18n="nav.plans">Тарифы</a>
           <a href="#faq" data-i18n="nav.faq">FAQ</a>
         </nav>
@@ -90,32 +81,36 @@
 
     <main id="main">
       <section class="hero" id="hero">
-        <div class="hero-photo" aria-hidden="true"></div>
+        <div class="hero-ground" aria-hidden="true"></div>
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="status-chip">
-              <span class="dot"></span>
-              <span data-i18n="hero.status">Закрытая бета · Android</span>
-            </p>
-            <h1 data-i18n="hero.title">Преврати мысли в систему, которая думает вместе с тобой</h1>
-            <p class="lead" data-i18n="hero.lead">
-              Говори или пиши как есть. Cydit понимает каждую мысль и превращает её в память, цели, задачи и следующий шаг — чтобы ничего не терялось, а всё двигалось вперёд.
-            </p>
+            <p class="eyebrow">AI Operating System for Your Mind</p>
+            <h1 data-i18n="hero.title" data-i18n-html>Говори. Cydit превращает мысли<br /><span class="grad">в действия.</span></h1>
+            <p class="lead" data-i18n="hero.lead">Записывай мысли голосом или текстом — получай цели, задачи и следующий шаг. Твой второй мозг в одном приложении.</p>
             <div class="hero-actions">
-              <a class="btn btn-primary btn-lg" href="#access" data-i18n="hero.primary">Получить ранний доступ</a>
-              <a class="btn btn-secondary btn-lg" href="#how" data-i18n="hero.secondary">Как это работает</a>
+              <a class="btn btn-primary btn-lg" href="#access">
+                <span data-i18n="hero.primary">Получить ранний доступ</span>
+                <svg class="icon"><use href="#i-step" /></svg>
+              </a>
+              <a class="btn btn-outline btn-lg" href="#how" data-i18n="hero.secondary">Как это работает</a>
             </div>
-            <ol class="path" aria-label="Мысль, понимание, действие" data-i18n-aria="path.label">
-              <li data-i18n="path.1">Мысль</li>
-              <li data-i18n="path.2">Понимание</li>
-              <li data-i18n="path.3">Действие</li>
-            </ol>
+            <p class="status-line">
+              <span class="dot"></span>
+              <span data-i18n="hero.status">Закрытая бета на Android</span>
+            </p>
           </div>
+
           <div class="hero-visual">
-            <div class="phone phone-back" aria-hidden="true">
-              <img src="assets/screens/capture.webp" width="720" height="1251" alt="" />
-            </div>
-            <div class="phone phone-front">
+            <div class="halo" aria-hidden="true"></div>
+            <ul class="float-chips" aria-hidden="true">
+              <li class="float-chip chip-l1"><svg class="icon"><use href="#i-target" /></svg><span data-i18n="chip.goals">Цели</span></li>
+              <li class="float-chip chip-l2"><svg class="icon"><use href="#i-task" /></svg><span data-i18n="chip.tasks">Задачи</span></li>
+              <li class="float-chip chip-l3"><svg class="icon"><use href="#i-bulb" /></svg><span data-i18n="chip.ideas">Идеи</span></li>
+              <li class="float-chip chip-r1"><svg class="icon"><use href="#i-bell" /></svg><span data-i18n="chip.reminders">Напоминания</span></li>
+              <li class="float-chip chip-r2"><svg class="icon"><use href="#i-chart" /></svg><span data-i18n="chip.insights">Инсайты</span></li>
+              <li class="float-chip chip-r3"><svg class="icon"><use href="#i-calendar" /></svg><span data-i18n="chip.calendar">Календарь</span></li>
+            </ul>
+            <div class="device device-hero">
               <img
                 src="assets/screens/home.webp"
                 width="720"
@@ -129,142 +124,40 @@
         </div>
       </section>
 
-      <section class="strip-section">
+      <section class="features" id="features" aria-label="Возможности" data-i18n-aria="nav.features">
         <div class="container">
-          <ul class="strip card reveal">
-            <li>
-              <strong data-i18n="strip.1.t">Голос</strong>
-              <span data-i18n="strip.1.d">фиксируй со скоростью мысли</span>
+          <ul class="feature-row">
+            <li class="tile reveal">
+              <span class="icon-badge"><svg class="icon"><use href="#i-mic" /></svg></span>
+              <h3 data-i18n="f.1.t">Голосовые мысли</h3>
+              <p data-i18n="f.1.d">Просто говори — Cydit запишет и поймёт.</p>
             </li>
-            <li>
-              <strong data-i18n="strip.2.t">Живая память</strong>
-              <span data-i18n="strip.2.d">идеи связываются со временем</span>
+            <li class="tile reveal">
+              <span class="icon-badge"><svg class="icon"><use href="#i-list" /></svg></span>
+              <h3 data-i18n="f.2.t">Авто-категоризация</h3>
+              <p data-i18n="f.2.d">Сам определяет: цель, задача, идея или решение.</p>
             </li>
-            <li>
-              <strong data-i18n="strip.3.t">Авто-порядок</strong>
-              <span data-i18n="strip.3.d">без папок и ручной сортировки</span>
+            <li class="tile reveal">
+              <span class="icon-badge"><svg class="icon"><use href="#i-spark" /></svg></span>
+              <h3 data-i18n="f.3.t">Умные инсайты</h3>
+              <p data-i18n="f.3.d">Замечает, что повторяется, и подсказывает следующий шаг.</p>
             </li>
-            <li>
-              <strong data-i18n="strip.4.t">До действия</strong>
-              <span data-i18n="strip.4.d">каждая мысль становится шагом</span>
+            <li class="tile reveal">
+              <span class="icon-badge"><svg class="icon"><use href="#i-calendar" /></svg></span>
+              <h3 data-i18n="f.4.t">Календарь</h3>
+              <p data-i18n="f.4.d">Видит события дня и находит окно для фокуса.</p>
+            </li>
+            <li class="tile reveal">
+              <span class="icon-badge"><svg class="icon"><use href="#i-chart" /></svg></span>
+              <h3 data-i18n="f.5.t">Прогресс</h3>
+              <p data-i18n="f.5.d">Показывает, что сделано по каждой цели и шагу.</p>
+            </li>
+            <li class="tile reveal">
+              <span class="icon-badge"><svg class="icon"><use href="#i-shield" /></svg></span>
+              <h3 data-i18n="f.6.t">Безопасность</h3>
+              <p data-i18n="f.6.d">Данные под твоим контролем: экспорт и удаление в любой момент.</p>
             </li>
           </ul>
-        </div>
-      </section>
-
-      <section class="section manifesto">
-        <div class="container narrow reveal">
-          <p class="eyebrow" data-i18n="manifesto.eyebrow">Наша идея</p>
-          <p class="manifesto-text" data-i18n="manifesto.text" data-i18n-html>
-            Твой разум не создан быть картотекой. Cydit даёт каждой мысли <span class="grad">место, где она живёт, связывается</span> и превращается в действие.
-          </p>
-        </div>
-      </section>
-
-      <section class="section" id="product">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow" data-i18n="product.eyebrow">Суть продукта</p>
-            <h2 data-i18n="product.title">Не чат. Система мышления.</h2>
-            <p class="section-sub" data-i18n="product.sub">Чат отвечает и забывает. Cydit помнит, связывает и доводит мысль до шага.</p>
-          </div>
-
-          <div class="bento">
-            <article class="card bento-card bento-memory reveal">
-              <div class="bento-copy">
-                <span class="icon-badge"><svg class="icon"><use href="#i-hub" /></svg></span>
-                <h3 data-i18n="bento.memory.t">Память, которая связывает</h3>
-                <p data-i18n="bento.memory.d">Каждая мысль сохраняется с типом и тегами и связывается с тем, о чём ты думал раньше. К ней легко вернуться, когда она снова нужна.</p>
-                <div class="mini-row" aria-hidden="true">
-                  <span class="tag tag-on" data-i18n="bento.memory.f1">Мысли</span>
-                  <span class="tag" data-i18n="bento.memory.f2">Идеи</span>
-                  <span class="tag" data-i18n="bento.memory.f3">Решения</span>
-                </div>
-              </div>
-              <div class="peek" aria-hidden="true">
-                <img src="assets/screens/memory.webp" width="720" height="1251" alt="" loading="lazy" />
-              </div>
-            </article>
-
-            <article class="card bento-card bento-voice reveal">
-              <div class="bento-copy">
-                <span class="icon-badge"><svg class="icon"><use href="#i-mic" /></svg></span>
-                <h3 data-i18n="bento.voice.t">Голос и текст</h3>
-                <p data-i18n="bento.voice.d">Нажми и расскажи, что важно, или просто напиши. Cydit расшифрует и сохранит мысль.</p>
-              </div>
-              <div class="voice-portal" aria-hidden="true">
-                <div class="wave" data-wave></div>
-                <span class="mic-orb"><svg class="icon"><use href="#i-mic" /></svg></span>
-                <div class="wave wave-flip" data-wave></div>
-              </div>
-            </article>
-
-            <article class="card bento-card bento-understand reveal">
-              <div class="bento-copy">
-                <span class="icon-badge"><svg class="icon"><use href="#i-spark" /></svg></span>
-                <h3 data-i18n="bento.understand.t">Понимает смысл</h3>
-                <p data-i18n="bento.understand.d">Разбор выделяет суть, намерение и цель — и предлагает следующий ход.</p>
-              </div>
-              <div class="mini-row" aria-hidden="true">
-                <span class="tag tag-on"><svg class="icon"><use href="#i-nav" /></svg><span data-i18n="bento.understand.intent">собрать деньги для поездки</span></span>
-                <span class="tag"><svg class="icon"><use href="#i-tag" /></svg>goal</span>
-              </div>
-            </article>
-
-            <article class="card bento-card bento-goals reveal">
-              <div class="bento-copy">
-                <span class="icon-badge"><svg class="icon"><use href="#i-flag" /></svg></span>
-                <h3 data-i18n="bento.goals.t">Цели с прогрессом</h3>
-                <p data-i18n="bento.goals.d">Мысль становится целью с шагами. Видно, что сделано и какое действие следующее.</p>
-              </div>
-              <div class="mini-goal" aria-hidden="true">
-                <svg class="ring" viewBox="0 0 64 64" data-ring="0.4">
-                  <defs>
-                    <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0" stop-color="#40E6F2" />
-                      <stop offset="1" stop-color="#8870FF" />
-                    </linearGradient>
-                  </defs>
-                  <circle class="ring-track" cx="32" cy="32" r="27" />
-                  <circle class="ring-value" cx="32" cy="32" r="27" />
-                  <text x="32" y="37" text-anchor="middle">40%</text>
-                </svg>
-                <div>
-                  <span class="mini-muted" data-i18n="bento.goals.done">Выполнено 2 из 5 шагов</span>
-                  <span class="mini-link" data-i18n="bento.goals.next">Следующее действие</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="card bento-card bento-calendar reveal">
-              <div class="bento-copy">
-                <span class="icon-badge"><svg class="icon"><use href="#i-calendar" /></svg></span>
-                <h3 data-i18n="bento.calendar.t">Календарь и свободные окна</h3>
-                <p data-i18n="bento.calendar.d">Cydit видит события календаря на устройстве и подсказывает окно для сфокусированной работы.</p>
-              </div>
-              <div class="mini-week" aria-hidden="true">
-                <span><i data-i18n="wd.1">Пн</i>14</span>
-                <span><i data-i18n="wd.2">Вт</i>15</span>
-                <span><i data-i18n="wd.3">Ср</i>16</span>
-                <span><i data-i18n="wd.4">Чт</i>17</span>
-                <span><i data-i18n="wd.5">Пт</i>18</span>
-                <span><i data-i18n="wd.6">Сб</i>19</span>
-                <span class="on"><i data-i18n="wd.7">Вс</i>20</span>
-              </div>
-            </article>
-
-            <article class="card bento-card bento-consent reveal">
-              <div class="bento-copy">
-                <span class="icon-badge"><svg class="icon"><use href="#i-shield" /></svg></span>
-                <h3 data-i18n="bento.consent.t">Ничего без твоего «да»</h3>
-                <p data-i18n="bento.consent.d">Цели и задачи появляются только после явного подтверждения. Cydit предлагает — решаешь ты.</p>
-              </div>
-              <div class="mini-row" aria-hidden="true">
-                <span class="mini-btn" data-i18n="bento.consent.no">Отклонить</span>
-                <span class="mini-btn mini-btn-on" data-i18n="bento.consent.yes">Подтвердить</span>
-              </div>
-            </article>
-          </div>
         </div>
       </section>
 
@@ -272,58 +165,172 @@
         <div class="container">
           <div class="section-head reveal">
             <p class="eyebrow" data-i18n="how.eyebrow">Как это работает</p>
-            <h2 data-i18n="how.title">От сырой мысли до следующего шага</h2>
+            <h2 data-i18n="how.title">От мысли до результата — четыре шага</h2>
           </div>
-
-          <ol class="flow reveal">
+          <ol class="steps panel reveal">
             <li>
-              <span class="flow-num">1</span>
-              <strong data-i18n="how.1.t">Захват</strong>
-              <span data-i18n="how.1.d">Голос или текст</span>
+              <span class="step-num">1</span>
+              <span class="icon-badge"><svg class="icon"><use href="#i-mic" /></svg></span>
+              <div>
+                <strong data-i18n="how.1.t">Говори</strong>
+                <span data-i18n="how.1.d">Запиши мысль голосом или текстом.</span>
+              </div>
             </li>
             <li>
-              <span class="flow-num">2</span>
-              <strong data-i18n="how.2.t">Понимание</strong>
-              <span data-i18n="how.2.d">AI разбирает смысл</span>
+              <span class="step-num">2</span>
+              <span class="icon-badge"><svg class="icon"><use href="#i-pulse" /></svg></span>
+              <div>
+                <strong data-i18n="how.2.t">Cydit анализирует</strong>
+                <span data-i18n="how.2.d">Понимает смысл, намерение и цель.</span>
+              </div>
             </li>
             <li>
-              <span class="flow-num">3</span>
-              <strong data-i18n="how.3.t">Связи</strong>
-              <span data-i18n="how.3.d">Соединяет с памятью</span>
+              <span class="step-num">3</span>
+              <span class="icon-badge"><svg class="icon"><use href="#i-list" /></svg></span>
+              <div>
+                <strong data-i18n="how.3.t">Получай результат</strong>
+                <span data-i18n="how.3.d">Цель, шаги и следующий ход.</span>
+              </div>
             </li>
             <li>
-              <span class="flow-num">4</span>
-              <strong data-i18n="how.4.t">План</strong>
-              <span data-i18n="how.4.d">Цель и шаги</span>
-            </li>
-            <li>
-              <span class="flow-num">5</span>
-              <strong data-i18n="how.5.t">Возврат</strong>
-              <span data-i18n="how.5.d">Напомнит вернуться</span>
+              <span class="step-num">4</span>
+              <span class="icon-badge"><svg class="icon"><use href="#i-rocket" /></svg></span>
+              <div>
+                <strong data-i18n="how.4.t">Действуй</strong>
+                <span data-i18n="how.4.d">Иди по маршруту и возвращайся вовремя.</span>
+              </div>
             </li>
           </ol>
+        </div>
+      </section>
 
+      <section class="section" id="example">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow" data-i18n="ex.eyebrow">Пример из приложения</p>
+            <h2 data-i18n="ex.title">Одна мысль — много возможностей</h2>
+          </div>
           <div class="example reveal">
-            <figure class="card example-in">
-              <figcaption class="example-label" data-i18n="ex.in.label">Ты говоришь</figcaption>
-              <blockquote data-i18n="ex.in.quote">«Хочу через неделю поехать в Дубай, но мне не хватает 100 тысяч рублей».</blockquote>
-              <div class="wave wave-wide" data-wave aria-hidden="true"></div>
-            </figure>
-            <span class="example-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow" /></svg></span>
-            <figure class="card card-glow example-out">
-              <figcaption class="example-label" data-i18n="ex.out.label">Cydit разбирает</figcaption>
-              <h3 data-i18n="ex.out.title">План поездки в Дубай</h3>
-              <p data-i18n="ex.out.summary">Не хватает 100 тысяч рублей для поездки через неделю.</p>
-              <div class="mini-row">
-                <span class="tag tag-on"><svg class="icon"><use href="#i-nav" /></svg><span data-i18n="ex.out.intent">собрать деньги для поездки</span></span>
-                <span class="tag"><svg class="icon"><use href="#i-tag" /></svg>goal</span>
+            <blockquote class="quote" data-i18n="ex.quote">«Хочу через неделю поехать в Дубай, но мне не хватает 100 тысяч рублей»</blockquote>
+            <span class="example-arrow" aria-hidden="true"><svg class="icon"><use href="#i-step" /></svg></span>
+            <div class="panel creates">
+              <p class="creates-title" data-i18n="ex.creates">Cydit создаёт:</p>
+              <dl>
+                <div>
+                  <dt><span class="mini-icon mini-violet"><svg class="icon"><use href="#i-flag" /></svg></span><span data-i18n="ex.1.t">Цель</span></dt>
+                  <dd data-i18n="ex.1.d">Собрать 100 тысяч рублей для поездки в Дубай</dd>
+                </div>
+                <div>
+                  <dt><span class="mini-icon mini-blue"><svg class="icon"><use href="#i-task" /></svg></span><span data-i18n="ex.2.t">Задача</span></dt>
+                  <dd data-i18n="ex.2.d">Составить план по накоплению недостающей суммы</dd>
+                </div>
+                <div>
+                  <dt><span class="mini-icon mini-cyan"><svg class="icon"><use href="#i-step" /></svg></span><span data-i18n="ex.3.t">Следующий шаг</span></dt>
+                  <dd data-i18n="ex.3.d">Исследовать варианты дополнительного дохода или экономии</dd>
+                </div>
+                <div>
+                  <dt><span class="mini-icon mini-violet"><svg class="icon"><use href="#i-clock" /></svg></span><span data-i18n="ex.4.t">Когда вернуться</span></dt>
+                  <dd data-i18n="ex.4.d">После того, как сделаешь шаг на сегодня</dd>
+                </div>
+              </dl>
+              <p class="note" data-i18n="ex.note">Формулировки взяты с экранов приложения.</p>
+            </div>
+            <div class="device device-example">
+              <img src="assets/screens/goals.webp" width="720" height="1251" alt="Экран «Цели» с прогрессом по шагам" data-i18n-alt="ex.alt" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="insights">
+        <div class="container">
+          <div class="panel panel-glow insights reveal">
+            <div class="insights-copy">
+              <p class="eyebrow" data-i18n="ins.eyebrow">Инсайты, которые двигают вперёд</p>
+              <h2 data-i18n="ins.title">Cydit замечает, что повторяется в твоих мыслях</h2>
+              <p class="section-sub" data-i18n="ins.sub">Портрет складывается из твоих записей: что повторяется, что изменилось и на чём стоит сфокусироваться. Это наблюдения, а не оценки — с ними можно согласиться или нет.</p>
+              <a class="btn btn-primary" href="#screens">
+                <span data-i18n="ins.cta">Смотреть экраны</span>
+                <svg class="icon"><use href="#i-step" /></svg>
+              </a>
+            </div>
+            <div class="portrait" aria-hidden="true">
+              <div class="portrait-top">
+                <span class="portrait-label" data-i18n="ins.card.label">Пример наблюдения</span>
+                <span class="periods">
+                  <i data-i18n="ins.card.p7">7 дней</i>
+                  <i class="on" data-i18n="ins.card.p30">30 дней</i>
+                  <i data-i18n="ins.card.p90">90 дней</i>
+                </span>
               </div>
-              <div class="next-move">
-                <span class="next-label" data-i18n="ex.out.nextLabel">Твой следующий ход</span>
-                <span data-i18n="ex.out.next">Составить план по накоплению недостающей суммы.</span>
+              <div class="portrait-block">
+                <span class="portrait-key" data-i18n="ins.card.k1">Я замечаю</span>
+                <p class="portrait-main" data-i18n="ins.card.v1">Ты переводишь планы в конкретные действия.</p>
               </div>
-              <p class="example-note" data-i18n="ex.note">Пример собран из реальных экранов приложения.</p>
-            </figure>
+              <div class="portrait-block">
+                <span class="portrait-key" data-i18n="ins.card.k2">Почему это может быть важно</span>
+                <p data-i18n="ins.card.v2">В твоём недавнем ритме планирование связано с действием.</p>
+              </div>
+              <div class="portrait-block">
+                <span class="portrait-key" data-i18n="ins.card.k3">Можно попробовать</span>
+                <p data-i18n="ins.card.v3">Сохранить первое действие конкретным и ограниченным по времени.</p>
+              </div>
+              <div class="portrait-progress">
+                <span data-i18n="ins.card.progress">Портрет начинает складываться · 18 из 30 сигналов</span>
+                <span class="bar"><i></i></span>
+              </div>
+              <div class="portrait-feedback">
+                <span class="pill pill-on" data-i18n="ins.card.yes">Да, это похоже на меня</span>
+                <span class="pill" data-i18n="ins.card.maybe">Пока не уверен</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="navigator">
+        <div class="container navigator">
+          <div class="navigator-copy reveal">
+            <p class="eyebrow" data-i18n="nav2.eyebrow">Навигатор цели</p>
+            <h2 data-i18n="nav2.title">Cydit ведёт к цели шаг за шагом</h2>
+            <p class="section-sub" data-i18n="nav2.sub">У каждой цели есть маршрут. Cydit показывает следующее действие, объясняет, почему именно оно, и следит за статусом.</p>
+            <ul class="nav-list">
+              <li>
+                <span class="icon-badge"><svg class="icon"><use href="#i-route" /></svg></span>
+                <div>
+                  <strong data-i18n="nav2.1.t">Маршрут</strong>
+                  <span data-i18n="nav2.1.d">Цель раскладывается на шаги. Маршрут можно перестроить.</span>
+                </div>
+              </li>
+              <li>
+                <span class="icon-badge"><svg class="icon"><use href="#i-step" /></svg></span>
+                <div>
+                  <strong data-i18n="nav2.2.t">Следующее действие</strong>
+                  <span data-i18n="nav2.2.d">Один конкретный шаг вместо длинного списка.</span>
+                </div>
+              </li>
+              <li>
+                <span class="icon-badge"><svg class="icon"><use href="#i-pulse" /></svg></span>
+                <div>
+                  <strong data-i18n="nav2.3.t">Статус цели</strong>
+                  <span data-i18n="nav2.3.d">По плану, под угрозой или с задержкой — по выполненным шагам.</span>
+                </div>
+              </li>
+              <li>
+                <span class="icon-badge"><svg class="icon"><use href="#i-why" /></svg></span>
+                <div>
+                  <strong data-i18n="nav2.4.t">Почему</strong>
+                  <span data-i18n="nav2.4.d">Каждая рекомендация объясняет, на чём она основана.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="orb-scene reveal" aria-hidden="true">
+            <span class="orb"><i></i><i></i></span>
+            <span class="bubble b1" data-i18n="nav2.b1">Следующее действие: изучить ограничения</span>
+            <span class="bubble b2" data-i18n="nav2.b2">Выполнено 2 из 5 шагов</span>
+            <span class="bubble b3" data-i18n="nav2.b3">Статус цели: по плану</span>
+            <span class="bubble b4" data-i18n="nav2.b4">Получить следующий шаг?</span>
           </div>
         </div>
       </section>
@@ -331,71 +338,81 @@
       <section class="section" id="screens">
         <div class="container">
           <div class="section-head reveal">
-            <p class="eyebrow" data-i18n="screens.eyebrow">Реальные экраны</p>
-            <h2 data-i18n="screens.title">Интерфейс говорит сам за себя</h2>
-            <p class="section-sub" data-i18n="screens.sub">Скриншоты сняты с бета-версии приложения, а не нарисованы для сайта.</p>
+            <p class="eyebrow" data-i18n="scr.eyebrow">Все твои мысли в одном месте</p>
+            <h2 data-i18n="scr.title">Больше, чем просто заметки</h2>
+            <p class="section-sub" data-i18n="scr.sub">Cydit — не блокнот. Это система для работы с мыслями, идеями и целями. Скриншоты сняты с бета-версии приложения.</p>
           </div>
 
           <div class="showcase reveal">
-            <div class="showcase-tabs" role="tablist" aria-label="Экраны приложения" data-i18n-aria="screens.tabs">
-              <button class="showcase-tab" role="tab" type="button" id="tab-home" aria-controls="panel-home" aria-selected="true">
-                <strong data-i18n="screens.home.t">Главная</strong>
-                <span data-i18n="screens.home.d">Фокус дня, главная цель и следующий шаг — на одном экране.</span>
-              </button>
-              <button class="showcase-tab" role="tab" type="button" id="tab-capture" aria-controls="panel-capture" aria-selected="false" tabindex="-1">
-                <strong data-i18n="screens.capture.t">Новая мысль</strong>
-                <span data-i18n="screens.capture.d">Нажми на микрофон или напиши. Одна кнопка — «Сохранить и понять».</span>
-              </button>
-              <button class="showcase-tab" role="tab" type="button" id="tab-analysis" aria-controls="panel-analysis" aria-selected="false" tabindex="-1">
-                <strong data-i18n="screens.analysis.t">Разбор мысли</strong>
-                <span data-i18n="screens.analysis.d">Суть, намерение и следующий ход. Разбор можно оценить, изменить или превратить в план.</span>
-              </button>
-              <button class="showcase-tab" role="tab" type="button" id="tab-goals" aria-controls="panel-goals" aria-selected="false" tabindex="-1">
-                <strong data-i18n="screens.goals.t">Цели</strong>
-                <span data-i18n="screens.goals.d">Прогресс по шагам и следующее действие для каждой цели.</span>
-              </button>
+            <div class="tabs" role="tablist" aria-label="Экраны приложения" data-i18n-aria="scr.tabs">
+              <button class="tab" role="tab" type="button" id="tab-home" aria-controls="panel-home" aria-selected="true" data-i18n="scr.home.t">Главная</button>
+              <button class="tab" role="tab" type="button" id="tab-capture" aria-controls="panel-capture" aria-selected="false" tabindex="-1" data-i18n="scr.capture.t">Новая мысль</button>
+              <button class="tab" role="tab" type="button" id="tab-analysis" aria-controls="panel-analysis" aria-selected="false" tabindex="-1" data-i18n="scr.analysis.t">Разбор мысли</button>
+              <button class="tab" role="tab" type="button" id="tab-goals" aria-controls="panel-goals" aria-selected="false" tabindex="-1" data-i18n="scr.goals.t">Цели</button>
             </div>
 
-            <div class="showcase-stage">
-              <div class="phone phone-stage">
-                <div class="shot is-active" id="panel-home" role="tabpanel" aria-labelledby="tab-home"><img src="assets/screens/home.webp" width="720" height="1251" alt="Экран «Главная»" data-i18n-alt="screens.home.alt" loading="lazy" /></div>
-                <div class="shot" id="panel-capture" role="tabpanel" aria-labelledby="tab-capture"><img src="assets/screens/capture.webp" width="720" height="1251" alt="Экран «Новая мысль»" data-i18n-alt="screens.capture.alt" loading="lazy" /></div>
-                <div class="shot" id="panel-analysis" role="tabpanel" aria-labelledby="tab-analysis"><img src="assets/screens/analysis.webp" width="720" height="1251" alt="Экран «Разбор мысли»" data-i18n-alt="screens.analysis.alt" loading="lazy" /></div>
-                <div class="shot" id="panel-goals" role="tabpanel" aria-labelledby="tab-goals"><img src="assets/screens/goals.webp" width="720" height="1251" alt="Экран «Цели»" data-i18n-alt="screens.goals.alt" loading="lazy" /></div>
+            <div class="coverflow">
+              <div class="device shot is-active" id="panel-home" role="tabpanel" aria-labelledby="tab-home">
+                <img src="assets/screens/home.webp" width="720" height="1251" alt="Экран «Главная»" data-i18n-alt="scr.home.alt" loading="lazy" />
               </div>
+              <div class="device shot is-next" id="panel-capture" role="tabpanel" aria-labelledby="tab-capture">
+                <img src="assets/screens/capture.webp" width="720" height="1251" alt="Экран «Новая мысль»" data-i18n-alt="scr.capture.alt" loading="lazy" />
+              </div>
+              <div class="device shot" id="panel-analysis" role="tabpanel" aria-labelledby="tab-analysis">
+                <img src="assets/screens/analysis.webp" width="720" height="1251" alt="Экран «Разбор мысли»" data-i18n-alt="scr.analysis.alt" loading="lazy" />
+              </div>
+              <div class="device shot is-prev" id="panel-goals" role="tabpanel" aria-labelledby="tab-goals">
+                <img src="assets/screens/goals.webp" width="720" height="1251" alt="Экран «Цели»" data-i18n-alt="scr.goals.alt" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="captions" aria-live="polite">
+              <p class="is-active" data-for="tab-home" data-i18n="scr.home.d">Фокус дня, главная цель и следующий шаг — на одном экране.</p>
+              <p data-for="tab-capture" data-i18n="scr.capture.d">Нажми на микрофон или напиши. Одна кнопка — «Сохранить и понять».</p>
+              <p data-for="tab-analysis" data-i18n="scr.analysis.d">Суть, намерение и следующий ход. Разбор можно оценить, изменить или превратить в план.</p>
+              <p data-for="tab-goals" data-i18n="scr.goals.d">Прогресс по шагам и следующее действие для каждой цели.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="use-cases">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow" data-i18n="use.eyebrow">Сценарии</p>
-            <h2 data-i18n="use.title">Создан под то, как ты думаешь</h2>
+      <section class="section" id="for">
+        <div class="container audience">
+          <div class="audience-copy reveal">
+            <p class="eyebrow" data-i18n="for.eyebrow">Для кого Cydit</p>
+            <h2 data-i18n="for.title">Подходит каждому, кто хочет большего</h2>
+            <p class="section-sub" data-i18n="for.sub">Студенты, предприниматели, творческие люди, специалисты — если у тебя много мыслей, идей и целей, Cydit поможет навести порядок и превратить их в результат.</p>
           </div>
-          <div class="grid-4">
-            <article class="card use-card reveal">
-              <span class="icon-badge"><svg class="icon"><use href="#i-rocket" /></svg></span>
-              <h3 data-i18n="use.1.t">Основатели и билдеры</h3>
-              <p data-i18n="use.1.d">Фиксируй стратегию, идеи и решения — не теряй нить между встречами.</p>
-            </article>
-            <article class="card use-card reveal">
-              <span class="icon-badge"><svg class="icon"><use href="#i-pen" /></svg></span>
-              <h3 data-i18n="use.2.t">Авторы и креаторы</h3>
-              <p data-i18n="use.2.d">Превращай вспышки идей в планы и архив, по которому легко искать.</p>
-            </article>
-            <article class="card use-card reveal">
-              <span class="icon-badge"><svg class="icon"><use href="#i-study" /></svg></span>
-              <h3 data-i18n="use.3.t">Студенты и исследователи</h3>
-              <p data-i18n="use.3.d">Собирай вопросы, выводы и идеи в одну память, которая растёт вместе с тобой.</p>
-            </article>
-            <article class="card use-card reveal">
-              <span class="icon-badge"><svg class="icon"><use href="#i-mind" /></svg></span>
-              <h3 data-i18n="use.4.t">Занятые головы</h3>
-              <p data-i18n="use.4.d">Разгрузи память — Cydit помнит, раскладывает и напоминает, а ты в фокусе.</p>
-            </article>
-          </div>
+          <ul class="people">
+            <li class="person reveal">
+              <img src="assets/people/students.webp" width="720" height="720" alt="" loading="lazy" />
+              <div>
+                <h3 data-i18n="for.1.t">Студенты</h3>
+                <p data-i18n="for.1.d">Организуй учёбу и личные цели</p>
+              </div>
+            </li>
+            <li class="person reveal">
+              <img src="assets/people/founders.webp" width="720" height="720" alt="" loading="lazy" />
+              <div>
+                <h3 data-i18n="for.2.t">Предприниматели</h3>
+                <p data-i18n="for.2.d">Структурируй идеи и развивай проекты</p>
+              </div>
+            </li>
+            <li class="person reveal">
+              <img src="assets/people/creators.webp" width="720" height="720" alt="" loading="lazy" />
+              <div>
+                <h3 data-i18n="for.3.t">Творческие люди</h3>
+                <p data-i18n="for.3.d">Сохраняй идеи и вдохновение</p>
+              </div>
+            </li>
+            <li class="person reveal">
+              <img src="assets/people/specialists.webp" width="720" height="720" alt="" loading="lazy" />
+              <div>
+                <h3 data-i18n="for.4.t">Специалисты</h3>
+                <p data-i18n="for.4.d">Планируй задачи и рост</p>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -405,7 +422,7 @@
             <p class="eyebrow" data-i18n="cmp.eyebrow">Почему Cydit</p>
             <h2 data-i18n="cmp.title">Не заметки и не чат</h2>
           </div>
-          <div class="compare card reveal">
+          <div class="compare panel reveal">
             <table>
               <thead>
                 <tr>
@@ -452,34 +469,42 @@
         </div>
       </section>
 
-      <section class="section" id="status">
+      <section class="section" id="roadmap">
         <div class="container">
           <div class="section-head reveal">
-            <p class="eyebrow" data-i18n="status.eyebrow">Статус</p>
-            <h2 data-i18n="status.title">Что уже работает и что дальше</h2>
+            <p class="eyebrow" data-i18n="road.eyebrow">Дорожная карта</p>
+            <h2 data-i18n="road.title">Что уже работает и что дальше</h2>
           </div>
-          <div class="grid-2">
-            <article class="card card-glow status-card reveal">
-              <p class="status-chip"><span class="dot"></span><span data-i18n="status.now.label">Сейчас · закрытая бета</span></p>
-              <ul class="checklist">
-                <li data-i18n="status.now.1">Приложение для Android, версия 2.0</li>
-                <li data-i18n="status.now.2">Голосовой и текстовый ввод мыслей</li>
-                <li data-i18n="status.now.3">Разбор мысли: суть, намерение, следующий ход</li>
-                <li data-i18n="status.now.4">Память, цели, задачи и календарь</li>
-                <li data-i18n="status.now.5">Тёмная и светлая тема, русский и английский</li>
-                <li data-i18n="status.now.6">Экспорт данных и удаление аккаунта</li>
-              </ul>
-            </article>
-            <article class="card status-card reveal">
-              <p class="status-chip status-chip-next"><span class="dot"></span><span data-i18n="status.next.label">Дальше</span></p>
-              <ul class="checklist checklist-next">
-                <li data-i18n="status.next.1">Покупка тарифов PLUS и PRO в приложении</li>
-                <li data-i18n="status.next.2">Письма с еженедельным обзором</li>
-                <li data-i18n="status.next.3">Более заметные уведомления</li>
-                <li data-i18n="status.next.4">Версии для iOS и веба</li>
-              </ul>
-            </article>
-          </div>
+          <ol class="roadmap">
+            <li class="is-now reveal">
+              <div class="panel">
+                <p class="road-meta"><span class="badge badge-now" data-i18n="road.1.badge">Сейчас</span></p>
+                <h3 data-i18n="road.1.t">Закрытая бета на Android</h3>
+                <p data-i18n="road.1.d">Голос и текст, разбор мысли, память, цели с маршрутом, задачи и календарь. Тёмная и светлая тема, русский и английский. Версия 2.0.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <div class="panel">
+                <p class="road-meta"><span class="badge" data-i18n="road.2.badge">Дальше</span></p>
+                <h3 data-i18n="road.2.t">Тарифы PLUS и PRO</h3>
+                <p data-i18n="road.2.d">Покупка тарифов прямо в приложении.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <div class="panel">
+                <p class="road-meta"><span class="badge" data-i18n="road.3.badge">Дальше</span></p>
+                <h3 data-i18n="road.3.t">Обзор недели и уведомления</h3>
+                <p data-i18n="road.3.d">Письма с еженедельным обзором и более заметные уведомления.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <div class="panel">
+                <p class="road-meta"><span class="badge" data-i18n="road.4.badge">Позже</span></p>
+                <h3 data-i18n="road.4.t">iOS и веб</h3>
+                <p data-i18n="road.4.d">Версии для других платформ.</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </section>
 
@@ -487,11 +512,11 @@
         <div class="container">
           <div class="section-head reveal">
             <p class="eyebrow" data-i18n="plans.eyebrow">Тарифы</p>
-            <h2 data-i18n="plans.title">Три режима доступа</h2>
+            <h2 data-i18n="plans.title">Выбери свой режим</h2>
             <p class="section-sub" data-i18n="plans.sub">Режимы отличаются числом AI-запросов и глубиной работы с памятью. Покупки появятся позже — цены объявим вместе с ними.</p>
           </div>
-          <div class="grid-3 plans">
-            <article class="card plan reveal">
+          <div class="plans">
+            <article class="panel plan reveal">
               <h3>FREE</h3>
               <p class="plan-sub" data-i18n="plans.free.sub">Базовый режим для старта</p>
               <ul class="checklist">
@@ -499,8 +524,9 @@
                 <li data-i18n="plans.free.2">Мысли без ограничений</li>
                 <li data-i18n="plans.free.3">Голосовой ввод</li>
               </ul>
+              <a class="btn btn-outline" href="#access" data-i18n="plans.cta">Попасть в бету</a>
             </article>
-            <article class="card plan reveal">
+            <article class="panel plan reveal">
               <h3>PLUS</h3>
               <p class="plan-sub" data-i18n="plans.plus.sub">Режим для ежедневной работы</p>
               <ul class="checklist">
@@ -510,12 +536,11 @@
                 <li data-i18n="plans.plus.4">AI-поиск по памяти</li>
                 <li data-i18n="plans.plus.5">Расширенные инсайты</li>
               </ul>
+              <a class="btn btn-outline" href="#access" data-i18n="plans.cta">Попасть в бету</a>
             </article>
-            <article class="card plan plan-max reveal">
-              <div class="plan-top">
-                <h3>PRO</h3>
-                <span class="plan-badge" data-i18n="plans.pro.badge">Максимум</span>
-              </div>
+            <article class="panel plan plan-max reveal">
+              <span class="plan-badge" data-i18n="plans.pro.badge">Максимум</span>
+              <h3>PRO</h3>
               <p class="plan-sub" data-i18n="plans.pro.sub">Максимальный режим для AI и памяти</p>
               <ul class="checklist">
                 <li data-i18n="plans.pro.1">Неограниченные AI-запросы</li>
@@ -523,76 +548,45 @@
                 <li data-i18n="plans.pro.3">Полная AI-память</li>
                 <li data-i18n="plans.pro.4">Приоритетная обработка</li>
               </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="privacy">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow" data-i18n="privacy.eyebrow">Приватность</p>
-            <h2 data-i18n="privacy.title">Твои мысли под защитой</h2>
-            <p class="section-sub" data-i18n="privacy.sub">Cydit хранит память под твоим контролем и даёт инструменты для управления данными.</p>
-          </div>
-          <div class="grid-4">
-            <article class="card use-card reveal">
-              <span class="icon-badge"><svg class="icon"><use href="#i-lock" /></svg></span>
-              <h3 data-i18n="privacy.1.t">Защита данных</h3>
-              <p data-i18n="privacy.1.d">Доступ к данным закрыт авторизацией и правилами безопасности.</p>
-            </article>
-            <article class="card use-card reveal">
-              <span class="icon-badge"><svg class="icon"><use href="#i-route" /></svg></span>
-              <h3 data-i18n="privacy.2.t">Обработка AI</h3>
-              <p data-i18n="privacy.2.d">Для разбора мысль передаётся через защищённый AI-шлюз. Содержимое ответов не пишется в аналитические логи.</p>
-            </article>
-            <article class="card use-card reveal">
-              <span class="icon-badge"><svg class="icon"><use href="#i-eye-off" /></svg></span>
-              <h3 data-i18n="privacy.3.t">Минимум доступа</h3>
-              <p data-i18n="privacy.3.d">Текст мыслей и ответы AI не используются в продуктовой аналитике.</p>
-            </article>
-            <article class="card use-card reveal">
-              <span class="icon-badge"><svg class="icon"><use href="#i-download" /></svg></span>
-              <h3 data-i18n="privacy.4.t">Контроль данных</h3>
-              <p data-i18n="privacy.4.d">Данные можно экспортировать, а аккаунт — удалить в любой момент.</p>
+              <a class="btn btn-primary" href="#access" data-i18n="plans.cta">Попасть в бету</a>
             </article>
           </div>
         </div>
       </section>
 
       <section class="section" id="faq">
-        <div class="container narrow">
+        <div class="container">
           <div class="section-head reveal">
-            <p class="eyebrow">FAQ</p>
-            <h2 data-i18n="faq.title">Отвечаем на вопросы</h2>
+            <p class="eyebrow" data-i18n="faq.eyebrow">Частые вопросы</p>
+            <h2 data-i18n="faq.title">Остались вопросы?</h2>
           </div>
           <div class="faq reveal">
-            <details class="card faq-item">
-              <summary><span data-i18n="faq.1.q">Что такое Cydit?</span><svg class="icon"><use href="#i-plus" /></svg></summary>
+            <details class="faq-item">
+              <summary><span data-i18n="faq.1.q">Что такое Cydit?</span><svg class="icon"><use href="#i-chevron" /></svg></summary>
               <p data-i18n="faq.1.a">Cydit — AI-операционная система для мышления. Ты фиксируешь мысль голосом или текстом, а Cydit превращает её в память, цели, задачи и следующий шаг, к которым можно вернуться в любой момент.</p>
             </details>
-            <details class="card faq-item">
-              <summary><span data-i18n="faq.2.q">Чем он отличается от заметок и чат-ботов?</span><svg class="icon"><use href="#i-plus" /></svg></summary>
+            <details class="faq-item">
+              <summary><span data-i18n="faq.2.q">Чем он отличается от заметок и чат-ботов?</span><svg class="icon"><use href="#i-chevron" /></svg></summary>
               <p data-i18n="faq.2.a">Заметки хранят то, что ты записал. Чат отвечает на вопрос и идёт дальше. Cydit разбирает мысль, связывает её с прежними и доводит до цели и следующего шага.</p>
             </details>
-            <details class="card faq-item">
-              <summary><span data-i18n="faq.3.q">Нужно ли что-то раскладывать вручную?</span><svg class="icon"><use href="#i-plus" /></svg></summary>
+            <details class="faq-item">
+              <summary><span data-i18n="faq.3.q">Нужно ли что-то раскладывать вручную?</span><svg class="icon"><use href="#i-chevron" /></svg></summary>
               <p data-i18n="faq.3.a">Нет. Тип и теги мысль получает при разборе. Цели и задачи Cydit предлагает сам, а создаёт их только после твоего подтверждения.</p>
             </details>
-            <details class="card faq-item">
-              <summary><span data-i18n="faq.4.q">Какие платформы поддерживаются?</span><svg class="icon"><use href="#i-plus" /></svg></summary>
+            <details class="faq-item">
+              <summary><span data-i18n="faq.4.q">Какие платформы поддерживаются?</span><svg class="icon"><use href="#i-chevron" /></svg></summary>
               <p data-i18n="faq.4.a">Сейчас идёт закрытая бета на Android. Версии для iOS и веба — в планах.</p>
             </details>
-            <details class="card faq-item">
-              <summary><span data-i18n="faq.5.q">Сколько это стоит?</span><svg class="icon"><use href="#i-plus" /></svg></summary>
+            <details class="faq-item">
+              <summary><span data-i18n="faq.5.q">Cydit бесплатен?</span><svg class="icon"><use href="#i-chevron" /></svg></summary>
               <p data-i18n="faq.5.a">В бете покупок нет. В приложении три режима — FREE, PLUS и PRO: они отличаются числом AI-запросов и глубиной работы с памятью. Цены объявим, когда появятся покупки.</p>
             </details>
-            <details class="card faq-item">
-              <summary><span data-i18n="faq.6.q">Что с моими данными?</span><svg class="icon"><use href="#i-plus" /></svg></summary>
+            <details class="faq-item">
+              <summary><span data-i18n="faq.6.q">Мои данные в безопасности?</span><svg class="icon"><use href="#i-chevron" /></svg></summary>
               <p data-i18n="faq.6.a">Память хранится под твоим контролем: данные можно экспортировать, а аккаунт — удалить вместе с мыслями, целями и задачами. Текст мыслей и ответы AI не попадают в продуктовую аналитику.</p>
             </details>
-            <details class="card faq-item">
-              <summary><span data-i18n="faq.7.q">Как попасть в бету?</span><svg class="icon"><use href="#i-plus" /></svg></summary>
+            <details class="faq-item">
+              <summary><span data-i18n="faq.7.q">Как попасть в бету?</span><svg class="icon"><use href="#i-chevron" /></svg></summary>
               <p data-i18n="faq.7.a">Оставь почту в форме ниже — напишем, когда откроем доступ.</p>
             </details>
           </div>
@@ -602,11 +596,10 @@
       <section class="section access" id="access">
         <div class="container">
           <div class="access-card reveal">
-            <div class="access-photo" aria-hidden="true"></div>
+            <div class="access-ground" aria-hidden="true"></div>
             <div class="access-body">
-              <img class="access-mark" src="assets/brand/cydit-mark.svg" width="64" height="64" alt="" />
               <p class="eyebrow" data-i18n="access.eyebrow">Ранний доступ</p>
-              <h2 data-i18n="access.title" data-i18n-html>Больше ясности.<br />Больше тебя.</h2>
+              <h2 data-i18n="access.title" data-i18n-html>Твой второй мозг.<br />В твоём кармане.</h2>
               <p class="access-text" data-i18n="access.text">Оставь почту — напишем, когда откроем доступ к бете Cydit.</p>
               <form class="access-form" id="accessForm" novalidate>
                 <label class="sr-only" for="accessEmail" data-i18n="access.emailLabel">Электронная почта</label>
@@ -614,6 +607,12 @@
                 <button class="btn btn-primary btn-lg" type="submit" data-i18n="access.button">Хочу в бету</button>
               </form>
               <p class="access-message" id="accessMessage" role="status" aria-live="polite"></p>
+            </div>
+            <div class="access-visual" aria-hidden="true">
+              <div class="halo"></div>
+              <div class="device device-access">
+                <img src="assets/screens/capture.webp" width="720" height="1251" alt="" loading="lazy" />
+              </div>
             </div>
           </div>
         </div>
@@ -624,12 +623,20 @@
       <div class="container footer-grid">
         <div class="footer-brand">
           <a class="brand" href="#top" aria-label="Cydit">
-            <img src="assets/brand/cydit-mark.svg" width="30" height="30" alt="" />
+            <img src="assets/brand/cydit-mark.svg" width="32" height="32" alt="" />
             <span>Cydit</span>
           </a>
-          <p data-i18n="footer.tagline">Мысли · Планы · Действия. Реальная жизнь.</p>
+          <p>AI Operating System for Your Mind</p>
         </div>
-        <nav class="footer-links" aria-label="Контакты" data-i18n-aria="footer.label">
+        <nav class="footer-col" aria-label="Продукт" data-i18n-aria="footer.product">
+          <strong data-i18n="footer.product">Продукт</strong>
+          <a href="#features" data-i18n="nav.features">Возможности</a>
+          <a href="#how" data-i18n="nav.how">Как это работает</a>
+          <a href="#plans" data-i18n="nav.plans">Тарифы</a>
+          <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        </nav>
+        <nav class="footer-col" aria-label="Контакты" data-i18n-aria="footer.contacts">
+          <strong data-i18n="footer.contacts">Контакты</strong>
           <a id="emailLink" href="mailto:hello@cydit.app">hello@cydit.app</a>
           <a id="telegramLink" href="https://t.me/cydit" target="_blank" rel="noopener noreferrer">Telegram</a>
           <a href="#access" data-i18n="cta.short">Ранний доступ</a>
